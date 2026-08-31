@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="70 42 410 414" role="img" aria-labelledby="title desc">
+  <title id="title">Compact KaleidashOS kinetic K</title>
+  <desc id="desc">A compact prismatic K optimized for terminal display.</desc>
+  <defs>
+    <linearGradient id="compact-spine" x1="126" y1="68" x2="196" y2="438" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#19d9f3"/>
+      <stop offset="0.48" stop-color="#2468f2"/>
+      <stop offset="1" stop-color="#f22ab7"/>
+    </linearGradient>
+    <linearGradient id="compact-upper" x1="203" y1="273" x2="462" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7138f4"/>
+      <stop offset="0.52" stop-color="#f31cad"/>
+      <stop offset="1" stop-color="#ff775c"/>
+    </linearGradient>
+    <linearGradient id="compact-lower" x1="210" y1="294" x2="462" y2="424" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5734e9"/>
+      <stop offset="0.55" stop-color="#c827da"/>
+      <stop offset="1" stop-color="#ff765d"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#compact-spine)" d="M94 438 151 111 279 58 222 246 203 272 187 399Z"/>
+  <path fill="url(#compact-upper)" d="m202 273 260-181-226 220Z"/>
+  <path fill="url(#compact-lower)" d="m226 292 236 132H337L203 308Z"/>
+</svg>

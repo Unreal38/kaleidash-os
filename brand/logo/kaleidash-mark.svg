@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">KaleidashOS kinetic K</title>
+  <desc id="desc">A sharp folded K built from cyan, violet, magenta, and coral facets.</desc>
+  <defs>
+    <linearGradient id="spine" x1="130" y1="80" x2="205" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#19d9f3"/>
+      <stop offset="0.48" stop-color="#2468f2"/>
+      <stop offset="1" stop-color="#f22ab7"/>
+    </linearGradient>
+    <linearGradient id="upper" x1="205" y1="278" x2="462" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7138f4"/>
+      <stop offset="0.52" stop-color="#f31cad"/>
+      <stop offset="1" stop-color="#ff775c"/>
+    </linearGradient>
+    <linearGradient id="lower" x1="206" y1="290" x2="456" y2="424" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5734e9"/>
+      <stop offset="0.55" stop-color="#c827da"/>
+      <stop offset="1" stop-color="#ff765d"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="102" y1="426" x2="223" y2="262" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff3c9d"/>
+      <stop offset="1" stop-color="#682ee9"/>
+    </linearGradient>
+  </defs>
+
+  <path fill="url(#spine)" d="M94 438 151 111 279 58 222 246 203 272Z"/>
+  <path fill="#2e43d9" d="m151 111 128-53-57 188-19 26Z" opacity=".42"/>
+  <path fill="url(#fold)" d="m94 438 109-166 31 43-47 84Z"/>
+  <path fill="url(#upper)" d="m202 273 260-181-226 220Z"/>
+  <path fill="url(#lower)" d="m226 292 236 132H337L203 308Z"/>
+</svg>
