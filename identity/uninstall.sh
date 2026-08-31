@@ -87,6 +87,7 @@ restore_system_file /etc/lsb-release lsb-release
 restore_system_file /etc/issue issue
 restore_system_file /etc/issue.net issue-net
 restore_system_file /etc/default/grub grub-default
+restore_system_file /boot/grub2/grubenv grubenv
 restore_system_file /var/lib/noctalia-greeter/greeter.toml greeter-config
 
 index=0

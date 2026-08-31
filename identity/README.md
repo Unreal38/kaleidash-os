@@ -30,6 +30,8 @@ After installation, reapply the current Noctalia theme or change the wallpaper o
 
 Reboot when convenient to see GRUB, Plymouth, and the greeter branding.
 
+The installer makes the GRUB menu visible for two seconds so the identity is actually shown. Uninstalling restores the original GRUB defaults and `grubenv`, including Fedora's previous auto-hide behavior.
+
 After a Fedora major-version upgrade, rerun `./identity/install.sh` so the KaleidashOS version fields are refreshed from Fedora's new `/usr/lib/os-release`.
 
 ## Restore Fedora branding

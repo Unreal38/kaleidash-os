@@ -347,17 +347,23 @@ install_grub_identity() {
 
   log "Installing KaleidashOS GRUB theme"
   backup_system_file /etc/default/grub grub-default
+  backup_system_file /boot/grub2/grubenv grubenv
   generated="$(mktemp)"
   sudo cat /etc/default/grub > "$generated"
   set_grub_key "$generated" GRUB_THEME "$GRUB_THEME_DIR/theme.txt"
   set_grub_key "$generated" GRUB_GFXMODE auto
   set_grub_key "$generated" GRUB_DISTRIBUTOR KaleidashOS
+  set_grub_key "$generated" GRUB_TIMEOUT_STYLE menu
+  set_grub_key "$generated" GRUB_TIMEOUT 2
   sudo install -m 0644 "$generated" /etc/default/grub
   rm -f -- "$generated"
 
   sudo install -d -m 0755 "$GRUB_THEME_DIR"
   sudo install -m 0644 "$SCRIPT_DIR/grub/theme.txt" "$GRUB_THEME_DIR/theme.txt"
   sudo install -m 0644 "$SCRIPT_DIR/grub/background.png" "$GRUB_THEME_DIR/background.png"
+  if command -v grub2-editenv >/dev/null 2>&1; then
+    sudo grub2-editenv - unset menu_auto_hide
+  fi
   sudo grub2-mkconfig -o /boot/grub2/grub.cfg >/dev/null
 }
 
