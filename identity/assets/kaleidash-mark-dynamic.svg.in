@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="70 42 410 414" role="img" aria-labelledby="title desc">
+  <title id="title">KaleidashOS kinetic K</title>
+  <desc id="desc">A compact prismatic K colored from the active Noctalia palette.</desc>
+  <defs>
+    <linearGradient id="spine" x1="126" y1="68" x2="196" y2="438" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="{{ colors.tertiary.default.hex }}"/>
+      <stop offset="0.48" stop-color="{{ colors.primary.default.hex }}"/>
+      <stop offset="1" stop-color="{{ colors.secondary.default.hex }}"/>
+    </linearGradient>
+    <linearGradient id="upper" x1="203" y1="273" x2="462" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="{{ colors.primary.default.hex }}"/>
+      <stop offset="0.52" stop-color="{{ colors.secondary.default.hex }}"/>
+      <stop offset="1" stop-color="{{ colors.tertiary.default.hex }}"/>
+    </linearGradient>
+    <linearGradient id="lower" x1="210" y1="294" x2="462" y2="424" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="{{ colors.primary.default.hex }}"/>
+      <stop offset="0.55" stop-color="{{ colors.secondary.default.hex }}"/>
+      <stop offset="1" stop-color="{{ colors.tertiary.default.hex }}"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#spine)" d="M94 438 151 111 279 58 222 246 203 272 187 399Z"/>
+  <path fill="url(#upper)" d="m202 273 260-181-226 220Z"/>
+  <path fill="url(#lower)" d="m226 292 236 132H337L203 308Z"/>
+</svg>

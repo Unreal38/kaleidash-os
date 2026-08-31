@@ -1,0 +1,28 @@
+title-text: ""
+desktop-color: "#090a12"
+desktop-image: "background.png"
+terminal-box: "0"
+
++ boot_menu {
+  left = 25%
+  top = 52%
+  width = 50%
+  height = 32%
+  item_color = "#d9d9e7"
+  selected_item_color = "#19d9f3"
+  item_height = 32
+  item_padding = 12
+  item_spacing = 8
+}
+
++ progress_bar {
+  id = "__timeout__"
+  left = 35%
+  top = 89%
+  width = 30%
+  height = 6
+  show_text = false
+  fg_color = "#f31cad"
+  bg_color = "#26283b"
+  border_color = "#26283b"
+}

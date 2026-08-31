@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly MARK="/usr/local/share/kaleidash-os/kaleidash-mark-mono.svg"
+
+[[ -f "$MARK" ]] || exit 0
+
+while IFS= read -r -d '' logo_path; do
+  rm -f -- "$logo_path"
+  install -m 0644 "$MARK" "$logo_path"
+done < <(find /usr/share/noctalia-greeter /usr/local/share/noctalia-greeter \
+  -name noctalia.svg -print0 2>/dev/null || true)

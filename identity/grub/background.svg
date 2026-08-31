@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#18152f"/>
+      <stop offset="0.55" stop-color="#0c0d18"/>
+      <stop offset="1" stop-color="#05060a"/>
+    </radialGradient>
+    <linearGradient id="spine" x1="839" y1="91" x2="885" y2="343" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#19d9f3"/>
+      <stop offset="0.48" stop-color="#2468f2"/>
+      <stop offset="1" stop-color="#f22ab7"/>
+    </linearGradient>
+    <linearGradient id="upper" x1="882" y1="260" x2="1057" y2="121" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7138f4"/>
+      <stop offset="0.52" stop-color="#f31cad"/>
+      <stop offset="1" stop-color="#ff775c"/>
+    </linearGradient>
+    <linearGradient id="lower" x1="884" y1="273" x2="1057" y2="365" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5734e9"/>
+      <stop offset="0.55" stop-color="#c827da"/>
+      <stop offset="1" stop-color="#ff765d"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <ellipse cx="960" cy="230" rx="270" ry="180" fill="#7a2cf0" opacity=".12" filter="url(#soft-glow)"/>
+  <ellipse cx="1010" cy="245" rx="210" ry="130" fill="#ef2caa" opacity=".10" filter="url(#soft-glow)"/>
+
+  <g transform="translate(640 20) scale(.72)">
+    <path fill="url(#spine)" d="M274 438 331 111 459 58 402 246 383 272 367 399Z"/>
+    <path fill="url(#upper)" d="m382 273 260-181-226 220Z"/>
+    <path fill="url(#lower)" d="m406 292 236 132H517L383 308Z"/>
+  </g>
+
+  <text x="960" y="420" fill="#f4f0ff" font-family="Inter, DejaVu Sans, sans-serif" font-size="48" font-weight="600" text-anchor="middle" letter-spacing="2">KaleidashOS</text>
+  <text x="960" y="465" fill="#aaa7bb" font-family="Inter, DejaVu Sans, sans-serif" font-size="21" text-anchor="middle" letter-spacing="1">Every wallpaper, a new desktop.</text>
+
+  <path d="M570 505H1350" stroke="#7f75a9" stroke-opacity=".22"/>
+  <text x="960" y="1015" fill="#656377" font-family="Inter, DejaVu Sans, sans-serif" font-size="16" text-anchor="middle">Fedora foundation · Niri · Noctalia</text>
+</svg>

@@ -18,6 +18,7 @@ This repository is in its initial identity and inventory phase. It will grow int
 
 - `brand/` - KaleidashOS identity and vector logo assets
 - `fastfetch/` - example Fastfetch identity and graphical-logo configuration
+- `identity/` - reversible local branding for metadata, desktop, terminal, greeter, GRUB, and Plymouth
 
 ## Planned structure
 

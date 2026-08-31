@@ -1,0 +1,11 @@
+[Unit]
+Description=Apply KaleidashOS branding to Noctalia Greeter
+Before=greetd.service
+ConditionPathExists=/usr/local/share/kaleidash-os/kaleidash-mark-mono.svg
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/kaleidash-greeter-brand
+
+[Install]
+WantedBy=multi-user.target

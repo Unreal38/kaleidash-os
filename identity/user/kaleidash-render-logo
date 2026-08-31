@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
+source_svg="$data_home/kaleidash-os/kaleidash-mark.svg"
+target_png="$data_home/kaleidash-os/kaleidash-mark.png"
+
+[[ -f "$source_svg" ]] || exit 0
+
+if command -v rsvg-convert >/dev/null 2>&1; then
+  rsvg-convert --width 512 --height 512 "$source_svg" --output "$target_png"
+elif command -v inkscape >/dev/null 2>&1; then
+  inkscape "$source_svg" --export-filename="$target_png" --export-width=512 --export-height=512 >/dev/null
+else
+  printf 'KaleidashOS: install librsvg2-tools or Inkscape to render the dynamic Fastfetch logo.\n' >&2
+  exit 1
+fi
