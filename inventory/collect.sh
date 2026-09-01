@@ -86,7 +86,7 @@ dnf -q repoquery --userinstalled --queryformat '%{name}\n' \
   | sort -u > "$staging_dir/packages/dnf-userinstalled.txt"
 
 dnf -q repoquery --userinstalled \
-  --queryformat '%{name}\t%{evr}\t%{arch}\t%{reason}\t%{from_repo}\n' \
+  --queryformat $'%{name}\t%{evr}\t%{arch}\t%{reason}\t%{from_repo}\n' \
   | sed '/^[[:space:]]*$/d' \
   | sort -u > "$staging_dir/packages/dnf-reference.tsv"
 
@@ -231,6 +231,22 @@ data_files=(
 for relative_path in "${data_files[@]}"; do
   [[ -f "$staging_dir/$relative_path" ]] || die "collector did not produce $relative_path"
 done
+
+validate_tsv_columns() {
+  local relative_path="$1"
+  local expected_columns="$2"
+
+  if ! awk -F '\t' -v expected="$expected_columns" \
+    'NF && NF != expected { exit 1 }' "$staging_dir/$relative_path"; then
+    die "$relative_path is not a valid $expected_columns-column TSV file"
+  fi
+}
+
+validate_tsv_columns packages/dnf-reference.tsv 5
+validate_tsv_columns packages/flatpak-apps.tsv 5
+validate_tsv_columns repositories/dnf-enabled.tsv 2
+validate_tsv_columns repositories/flatpak-remotes.tsv 3
+validate_tsv_columns system/component-versions.tsv 2
 
 if grep -ERn \
   '(/home/|BEGIN [A-Z ]*PRIVATE KEY|([?&]|[[:space:]])(token|password|secret|api[_-]?key)=|://[^/@[:space:]]+@)' \
