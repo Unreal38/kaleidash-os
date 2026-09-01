@@ -29,6 +29,8 @@ The installer requests `sudo` for system-owned files. It installs `plymouth-them
 
 After installation, reapply the current Noctalia theme or change the wallpaper once. Noctalia renders the full prismatic Kinetic K for Fastfetch and uses a separate bold monoline K for the panel. The panel glyph is colorized by Noctalia itself, so it always follows the same live widget color as the native panel icons.
 
+The primary and compact SVGs under `brand/logo/` are the geometry sources for system branding and Fastfetch respectively. During every installation, KaleidashOS regenerates the Noctalia-aware templates from those files. Updating the official SVG artwork therefore updates Fastfetch, Plymouth, and the Greeter without maintaining a second copy of the paths.
+
 The installer selects the Greeter's `Synced` scheme. Its wallpaper continues to come from Noctalia's normal Auto-Sync Greeter feature. The KaleidashOS logo and boot palette use Noctalia's user-template output directly, avoiding the extra delay before the Greeter sync file is updated.
 
 Reboot when convenient to see GRUB, Plymouth, and the greeter branding.

@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""Turn a KaleidashOS brand SVG into a Noctalia palette template."""
+
+from pathlib import Path
+import sys
+import xml.etree.ElementTree as ET
+
+
+SVG = "http://www.w3.org/2000/svg"
+ET.register_namespace("", SVG)
+ET.register_namespace("xlink", "http://www.w3.org/1999/xlink")
+ET.register_namespace("krita", "http://krita.org/namespaces/svg/krita")
+ET.register_namespace("sodipodi", "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd")
+
+GRADIENT_ROLES = {
+    "gradient0": ("secondary", "primary"),
+    "gradient1": ("primary", "secondary", "tertiary"),
+    "gradient2": ("tertiary", "primary", "secondary"),
+    "gradient3": ("primary", "secondary", "tertiary"),
+}
+
+
+def token(role: str) -> str:
+    return "{{ colors." + role + ".default.hex }}"
+
+
+def main() -> int:
+    if len(sys.argv) != 3:
+        print(f"usage: {Path(sys.argv[0]).name} INPUT.svg OUTPUT.svg.in", file=sys.stderr)
+        return 2
+
+    source = Path(sys.argv[1])
+    output = Path(sys.argv[2])
+    tree = ET.parse(source)
+    root = tree.getroot()
+
+    gradients = {
+        gradient.get("id"): gradient
+        for gradient in root.findall(f".//{{{SVG}}}linearGradient")
+    }
+    for gradient_id, roles in GRADIENT_ROLES.items():
+        gradient = gradients.get(gradient_id)
+        if gradient is None:
+            raise ValueError(f"{source}: required gradient {gradient_id!r} is missing")
+        stops = gradient.findall(f"{{{SVG}}}stop")
+        if len(stops) != len(roles):
+            raise ValueError(
+                f"{source}: {gradient_id} has {len(stops)} stops; expected {len(roles)}"
+            )
+        for stop, role in zip(stops, roles, strict=True):
+            stop.set("stop-color", token(role))
+
+    shadow = root.find(f".//{{{SVG}}}path[@id='shape3']")
+    if shadow is None:
+        raise ValueError(f"{source}: required shadow path 'shape3' is missing")
+    shadow.set("fill", token("primary"))
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    tree.write(output, encoding="utf-8", xml_declaration=True)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

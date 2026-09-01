@@ -134,6 +134,8 @@ EOF
 }
 
 install_desktop_identity() {
+  local dynamic_template
+
   log "Installing system icons and desktop identity"
   sudo install -D -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark.svg" \
     /usr/share/icons/hicolor/scalable/apps/kaleidash.svg
@@ -143,8 +145,12 @@ install_desktop_identity() {
     /usr/share/applications/kaleidash-about.desktop
   sudo install -D -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark.svg" \
     /usr/local/share/kaleidash-os/kaleidash-mark.svg
-  sudo install -m 0644 "$SCRIPT_DIR/assets/kaleidash-mark-dynamic.svg.in" \
+  dynamic_template="$(mktemp)"
+  "$SCRIPT_DIR/system/generate-dynamic-logo-template" \
+    "$REPO_ROOT/brand/logo/kaleidash-mark.svg" "$dynamic_template"
+  sudo install -m 0644 "$dynamic_template" \
     /usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in
+  rm -f -- "$dynamic_template"
 
   if command -v gtk-update-icon-cache >/dev/null 2>&1; then
     sudo gtk-update-icon-cache -f /usr/share/icons/hicolor >/dev/null 2>&1 || true
@@ -164,6 +170,7 @@ install_user_identity() {
   local panel_logo="$USER_DATA_HOME/kaleidash-os/kaleidash-panel-glyph.svg"
   local palette_file="$USER_DATA_HOME/kaleidash-os/palette.toml"
   local generated
+  local generated_template
 
   log "Installing wallpaper-reactive terminal identity"
   install -d -m 0755 \
@@ -182,14 +189,10 @@ install_user_identity() {
   backup_user_file "$palette_file" noctalia-live-palette
   backup_user_file "$USER_BIN_DIR/kaleidash-render-logo" render-logo-helper
 
-  if [[ ! -f "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.png" ]]; then
-    install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.png" \
-      "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.png"
-  fi
-  if [[ ! -f "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg" ]]; then
-    install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.svg" \
-      "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
-  fi
+  install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.png" \
+    "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.png"
+  install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.svg" \
+    "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
   install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-panel.svg" "$panel_logo"
   rm -f -- "$legacy_panel_template" "$legacy_panel_logo"
   if [[ ! -f "$palette_file" ]]; then
@@ -210,7 +213,11 @@ Path(output).write_text(config, encoding="utf-8")
 PY
   install -m 0644 "$generated" "$noctalia_config"
   rm -f -- "$generated"
-  install -m 0644 "$SCRIPT_DIR/assets/kaleidash-mark-dynamic.svg.in" "$noctalia_template"
+  generated_template="$(mktemp)"
+  "$SCRIPT_DIR/system/generate-dynamic-logo-template" \
+    "$REPO_ROOT/brand/logo/kaleidash-mark-compact.svg" "$generated_template"
+  install -m 0644 "$generated_template" "$noctalia_template"
+  rm -f -- "$generated_template"
   install -m 0644 "$SCRIPT_DIR/assets/kaleidash-palette.toml.in" "$palette_template"
   install -m 0755 "$SCRIPT_DIR/user/kaleidash-render-logo" "$USER_BIN_DIR/kaleidash-render-logo"
 
