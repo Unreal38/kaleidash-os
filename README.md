@@ -21,6 +21,7 @@ This repository is in its initial identity and inventory phase. It will grow int
 - `identity/` - reversible local branding for metadata, desktop, terminal, greeter, GRUB, and Plymouth
 - `inventory/` - privacy-conscious capture of packages, repositories, services, and component versions
 - `manifests/` - reviewed portable base and opt-in software/hardware profiles
+- `requirements/` - authoritative default applications, settings, configuration, and privacy scope
 
 ## Planned structure
 

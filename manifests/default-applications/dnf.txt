@@ -1,0 +1,5 @@
+cmatrix
+prismlauncher
+rpmfusion-nonfree-release
+steam-arch-transition
+vesktop

@@ -33,20 +33,25 @@ done
 [[ -f "$INVENTORY_DIR/repositories/dnf-enabled.tsv" ]] || die "repository inventory is missing"
 
 mapfile -t dnf_files < <(find "$SCRIPT_DIR" -name dnf.txt -type f | sort)
+mapfile -t dnf_addition_files < <(find "$SCRIPT_DIR" -name dnf-additions.txt -type f | sort)
 mapfile -t external_files < <(find "$SCRIPT_DIR" -name external.txt -type f | sort)
 mapfile -t repo_files < <(find "$SCRIPT_DIR" -name repositories.txt -type f | sort)
 mapfile -t flatpak_files < <(find "$SCRIPT_DIR" -name flatpak.tsv -type f | sort)
+mapfile -t flatpak_addition_files < <(find "$SCRIPT_DIR" -name flatpak-additions.tsv -type f | sort)
 mapfile -t flatpak_remote_files < <(find "$SCRIPT_DIR" -name flatpak-remotes.tsv -type f | sort)
 mapfile -t service_files < <(find "$SCRIPT_DIR" \( -name system-services.txt -o -name user-services.txt \) -type f | sort)
 
-for file in "${dnf_files[@]}" "${external_files[@]}" "${repo_files[@]}" \
-  "${flatpak_files[@]}" "${flatpak_remote_files[@]}" "${service_files[@]}"; do
+for file in "${dnf_files[@]}" "${dnf_addition_files[@]}" "${external_files[@]}" \
+  "${repo_files[@]}" "${flatpak_files[@]}" "${flatpak_addition_files[@]}" \
+  "${flatpak_remote_files[@]}" "${service_files[@]}"; do
   check_sorted_unique "$file"
 done
 
 dnf_entries="$(mktemp)"
-trap 'rm -f -- "$dnf_entries"' EXIT
-grep -hEv '^[[:space:]]*(#|$)' "${dnf_files[@]}" | sort > "$dnf_entries"
+captured_dnf_entries="$(mktemp)"
+trap 'rm -f -- "$dnf_entries" "$captured_dnf_entries"' EXIT
+grep -hEv '^[[:space:]]*(#|$)' "${dnf_files[@]}" | sort > "$captured_dnf_entries"
+grep -hEv '^[[:space:]]*(#|$)' "${dnf_files[@]}" "${dnf_addition_files[@]}" | sort > "$dnf_entries"
 
 if [[ -n "$(uniq -d "$dnf_entries")" ]]; then
   uniq -d "$dnf_entries" >&2
@@ -56,7 +61,7 @@ fi
 while IFS= read -r package; do
   grep -Fxq "$package" "$INVENTORY_DIR/packages/dnf-userinstalled.txt" \
     || die "manifest package was not present in the capture: $package"
-done < "$dnf_entries"
+done < "$captured_dnf_entries"
 
 while IFS= read -r repository; do
   awk -F '\t' -v value="$repository" '$1 == value { found=1 } END { exit !found }' \
@@ -64,9 +69,13 @@ while IFS= read -r repository; do
     || die "manifest repository was not enabled in the capture: $repository"
 done < <(grep -hEv '^[[:space:]]*(#|$)' "${repo_files[@]}" | sort -u)
 
-for file in "${flatpak_files[@]}"; do
+for file in "${flatpak_files[@]}" "${flatpak_addition_files[@]}"; do
   while IFS=$'\t' read -r scope application origin branch extra; do
     [[ -z "${extra:-}" && -n "$branch" ]] || die "$file contains an invalid Flatpak row"
+    [[ "$scope" == system || "$scope" == user ]] || die "$file contains an invalid Flatpak scope"
+    [[ "$application" =~ ^[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)+$ ]] \
+      || die "$file contains an invalid Flatpak application ID"
+    [[ "$file" == */flatpak-additions.tsv ]] && continue
     awk -F '\t' -v s="$scope" -v a="$application" -v o="$origin" -v b="$branch" \
       '$1 == s && $2 == a && $3 == o && $4 == b { found=1 } END { exit !found }' \
       "$INVENTORY_DIR/packages/flatpak-apps.tsv" \

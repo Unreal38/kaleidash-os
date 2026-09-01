@@ -1,9 +1,5 @@
 discord
 dolphin-emu
 mangohud
-prismlauncher
-rpmfusion-nonfree-release
-steam-arch-transition
-vesktop
 wine
 winetricks

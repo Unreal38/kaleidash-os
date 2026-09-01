@@ -24,11 +24,12 @@ This first split intentionally favors a small reproducible desktop over copying 
 - `copr:copr.fedorainfracloud.org:g3tchoo:prismlauncher` is redundant because the captured Prism Launcher package came from Terra.
 - `copr:copr.fedorainfracloud.org:codifryed:CoolerControl` is stale and conflicts with the chosen direct `liquidctl` approach.
 
-## Pending source recipes
+## Source recipes being promoted to default applications
 
-- Consulo, SourceGit, Unity Hub, PureRef, and Epson Printer Utility need stable vendor-source recipes.
+- Consulo, SourceGit, Unity Hub, and pokemon-colorscripts need stable upstream-source recipes before the installer can automate them.
+- PureRef and Epson Printer Utility remain optional external applications and also need stable vendor-source recipes.
 - `io.github.ishidawg.LeShade` references `leshade-origin`, but that Flatpak remote was not present in the captured remote list. It is withheld until its source is defined.
 
 ## Later configuration capture
 
-Package manifests do not yet reproduce Niri bindings, Noctalia layout/plugins, Kitty/Fish/Starship configuration, Yazi, GTK/Qt/KDE styling, Firefox theming, audio channel swapping, Sunshine display scripts, or liquidctl policy. Those belong to the next configuration-capture milestone and must exclude credentials and device secrets.
+Package manifests do not yet reproduce Niri bindings, Noctalia layout/plugins, Kitty/Fish/Starship configuration, Yazi, ncspot, GTK/Qt/KDE styling, Firefox theming, Swaylock, audio channel swapping, Sunshine display scripts, Waylandcraft, or liquidctl policy. Those belong to the configuration-capture milestone and must exclude credentials and device secrets.

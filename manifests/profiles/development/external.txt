@@ -1,4 +1,0 @@
-# These applications were installed outside normal enabled DNF repositories.
-consulo
-sourcegit
-unityhub

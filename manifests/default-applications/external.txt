@@ -1,0 +1,5 @@
+# Stable upstream installation recipes are required before automation.
+consulo
+pokemon-colorscripts
+sourcegit
+unityhub

@@ -1,4 +1,3 @@
-cmatrix
 gnome-network-displays
 lshw
 nvtop
