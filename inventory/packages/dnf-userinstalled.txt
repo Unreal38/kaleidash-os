@@ -173,6 +173,7 @@ gd
 ghostscript
 giflib-devel
 git
+git-credential-libsecret
 glibc
 glibc-all-langpacks
 glibc-devel

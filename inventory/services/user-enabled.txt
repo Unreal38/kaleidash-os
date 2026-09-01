@@ -6,6 +6,7 @@ obex.service
 pipewire-pulse.socket
 pipewire.socket
 snapd.session-agent.socket
+ssh-agent.socket
 systemd-tmpfiles-clean.timer
 systemd-tmpfiles-setup.service
 wireplumber.service
