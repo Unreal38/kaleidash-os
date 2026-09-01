@@ -1,0 +1,28 @@
+{
+  "LANDSCAPE-1": {
+    "name": "LANDSCAPE-1",
+    "make": "Fixture Manufacturer",
+    "model": "Landscape Display",
+    "logical": {
+      "x": 1080,
+      "y": 240,
+      "width": 2560,
+      "height": 1440,
+      "scale": 1.0,
+      "transform": "Normal"
+    }
+  },
+  "PORTRAIT-1": {
+    "name": "PORTRAIT-1",
+    "make": "Fixture Manufacturer",
+    "model": "Portrait Display",
+    "logical": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "scale": 1.0,
+      "transform": "90"
+    }
+  }
+}

@@ -30,7 +30,7 @@ The following behavior is part of the default edition:
 - Noctalia provides the panel, launcher, notifications, wallpaper/palette propagation, plugins, desktop widgets, media integration, and session controls.
 - Noctalia Greeter uses the active wallpaper-derived palette and KaleidashOS identity.
 - KDE remains the Fedora substrate and fallback session. KDE/Qt settings keep KDE applications visually consistent under Niri.
-- Swaylock is installed and themed from the current wallpaper palette.
+- Noctalia's native session lock is the primary lock screen, themed from the current wallpaper palette; Swaylock remains installed as a fallback.
 - Niri and KDE font choices are reproduced consistently.
 - The Waylandcraft Prism instance is exposed as a separate login session without modifying the normal Niri or Plasma sessions.
 
@@ -48,7 +48,7 @@ The following behavior is part of the default edition:
 | KDE/Qt | KDE globals, icons, fonts, color scheme, Qt6ct, and Kvantum settings |
 | Yazi | Theme, keymaps, file openers, preview rules, and Kitty integration |
 | ncspot | Theme and safe preferences only; authentication cache is excluded |
-| Swaylock | Lock-screen layout, fonts, image/palette behavior, and invocation from Niri/Noctalia |
+| Lock screen | Noctalia-native layout, wallpaper blur, palette styling, branding, Niri invocation, and Swaylock fallback |
 | Fastfetch | KaleidashOS identity, layout, dynamic logo, and recache integration |
 | Firefox | Wallpaper-compatible chrome/theme settings where portable and safe |
 | Sunshine | Sanitized application definitions and hardware-neutral display-script templates |
