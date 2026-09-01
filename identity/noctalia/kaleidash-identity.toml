@@ -3,3 +3,7 @@ input_path = "$XDG_CONFIG_HOME/noctalia/templates/kaleidash-mark-dynamic.svg.in"
 output_path = "$XDG_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
 post_hook = "$HOME/.local/bin/kaleidash-render-logo"
 hook_async = false
+
+[widget.control-center]
+custom_image = @KALEIDASH_LOGO_PATH@
+custom_image_colorize = false

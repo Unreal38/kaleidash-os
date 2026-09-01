@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch the Noctalia Greeter palette for KaleidashOS branding updates
+
+[Path]
+PathChanged=/var/lib/noctalia-greeter/sync.toml
+Unit=kaleidash-greeter-brand.service
+
+[Install]
+WantedBy=multi-user.target

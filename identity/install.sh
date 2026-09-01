@@ -141,6 +141,10 @@ install_desktop_identity() {
     /usr/share/pixmaps/kaleidash.svg
   sudo install -D -m 0644 "$SCRIPT_DIR/desktop/kaleidash-about.desktop" \
     /usr/share/applications/kaleidash-about.desktop
+  sudo install -D -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark.svg" \
+    /usr/local/share/kaleidash-os/kaleidash-mark.svg
+  sudo install -m 0644 "$SCRIPT_DIR/assets/kaleidash-mark-dynamic.svg.in" \
+    /usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in
 
   if command -v gtk-update-icon-cache >/dev/null 2>&1; then
     sudo gtk-update-icon-cache -f /usr/share/icons/hicolor >/dev/null 2>&1 || true
@@ -154,6 +158,7 @@ install_user_identity() {
   local fish_function="$USER_CONFIG_HOME/fish/functions/fastfetch.fish"
   local noctalia_config="$USER_CONFIG_HOME/noctalia/kaleidash-identity.toml"
   local noctalia_template="$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-dynamic.svg.in"
+  local generated
 
   log "Installing wallpaper-reactive terminal identity"
   install -d -m 0755 \
@@ -167,12 +172,29 @@ install_user_identity() {
   backup_user_file "$noctalia_template" noctalia-logo-template
   backup_user_file "$USER_BIN_DIR/kaleidash-render-logo" render-logo-helper
 
-  install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.png" \
-    "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.png"
-  install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.svg" \
-    "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
+  if [[ ! -f "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.png" ]]; then
+    install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.png" \
+      "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.png"
+  fi
+  if [[ ! -f "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg" ]]; then
+    install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.svg" \
+      "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
+  fi
   install -m 0644 "$SCRIPT_DIR/user/fastfetch.fish" "$fish_function"
-  install -m 0644 "$SCRIPT_DIR/noctalia/kaleidash-identity.toml" "$noctalia_config"
+  generated="$(mktemp)"
+  python3 - "$SCRIPT_DIR/noctalia/kaleidash-identity.toml" "$generated" \
+    "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+source, output, logo_path = sys.argv[1:]
+config = Path(source).read_text(encoding="utf-8")
+config = config.replace("@KALEIDASH_LOGO_PATH@", json.dumps(logo_path))
+Path(output).write_text(config, encoding="utf-8")
+PY
+  install -m 0644 "$generated" "$noctalia_config"
+  rm -f -- "$generated"
   install -m 0644 "$SCRIPT_DIR/assets/kaleidash-mark-dynamic.svg.in" "$noctalia_template"
   install -m 0755 "$SCRIPT_DIR/user/kaleidash-render-logo" "$USER_BIN_DIR/kaleidash-render-logo"
 
@@ -230,6 +252,54 @@ open(output_path, "w", encoding="utf-8").write("\n".join(lines) + "\n")
 PY
 }
 
+set_toml_string() {
+  local input="$1"
+  local output="$2"
+  local section="$3"
+  local key="$4"
+  local value="$5"
+
+  python3 - "$input" "$output" "$section" "$key" "$value" <<'PY'
+import json
+import re
+import sys
+
+input_path, output_path, section, key, value = sys.argv[1:]
+try:
+    lines = open(input_path, encoding="utf-8").read().splitlines()
+except FileNotFoundError:
+    lines = []
+
+section_header = f"[{section}]"
+section_start = None
+section_end = len(lines)
+for index, line in enumerate(lines):
+    stripped = line.strip()
+    if stripped == section_header:
+        section_start = index
+        continue
+    if section_start is not None and index > section_start and re.match(r"^\s*\[", line):
+        section_end = index
+        break
+
+new_line = f"{key} = {json.dumps(value)}"
+if section_start is None:
+    if lines and lines[-1].strip():
+        lines.append("")
+    lines.extend([section_header, new_line])
+else:
+    key_pattern = re.compile(rf"^\s*{re.escape(key)}\s*=")
+    for index in range(section_start + 1, section_end):
+        if key_pattern.match(lines[index]):
+            lines[index] = new_line
+            break
+    else:
+        lines.insert(section_end, new_line)
+
+open(output_path, "w", encoding="utf-8").write("\n".join(lines) + "\n")
+PY
+}
+
 install_greeter_identity() {
   local greeter_state_dir="/var/lib/noctalia-greeter"
   local greeter_config="$greeter_state_dir/greeter.toml"
@@ -244,14 +314,14 @@ install_greeter_identity() {
   fi
 
   log "Branding Noctalia Greeter"
-  sudo install -D -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-mono.svg" \
-    /usr/local/share/kaleidash-os/kaleidash-mark-mono.svg
   sudo install -D -m 0755 "$SCRIPT_DIR/system/kaleidash-greeter-brand" \
     /usr/local/libexec/kaleidash-greeter-brand
   sudo install -D -m 0644 "$SCRIPT_DIR/system/kaleidash-greeter-brand.service" \
     /etc/systemd/system/kaleidash-greeter-brand.service
+  sudo install -D -m 0644 "$SCRIPT_DIR/system/kaleidash-greeter-brand.path" \
+    /etc/systemd/system/kaleidash-greeter-brand.path
   sudo systemctl daemon-reload
-  sudo systemctl enable kaleidash-greeter-brand.service >/dev/null
+  sudo systemctl enable kaleidash-greeter-brand.service kaleidash-greeter-brand.path >/dev/null
 
   backup_system_file "$greeter_config" greeter-config
   generated="$(mktemp)"
@@ -260,6 +330,8 @@ install_greeter_identity() {
   else
     : > "$generated"
   fi
+  set_toml_string "$generated" "$generated.updated" appearance scheme Synced
+  mv -- "$generated.updated" "$generated"
   set_toml_boolean "$generated" "$generated.updated" appearance hide_logo false
   mv -- "$generated.updated" "$generated"
 
@@ -272,21 +344,23 @@ install_greeter_identity() {
     found=1
     backup_system_file "$logo_path" "greeter-logo-$index"
     printf '%s\n' "$logo_path" | sudo tee "$SYSTEM_STATE_DIR/greeter-logo-$index.path" >/dev/null
-    sudo rm -f -- "$logo_path"
-    sudo install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-mono.svg" "$logo_path"
     index=$((index + 1))
   done < <(sudo find /usr/share/noctalia-greeter /usr/local/share/noctalia-greeter \
     -name noctalia.svg -print0 2>/dev/null || true)
 
   if [[ $found -eq 0 ]]; then
     warn "The installed Noctalia logo asset was not found; palette sync remains configured, but the greeter logo was not replaced."
+  else
+    sudo systemctl start kaleidash-greeter-brand.service
   fi
+  sudo systemctl start kaleidash-greeter-brand.path
 }
 
 install_plymouth_identity() {
   local previous_theme_file="$SYSTEM_STATE_DIR/plymouth-previous-theme"
   local spinner_dir="/usr/share/plymouth/themes/spinner"
   local theme_file
+  local logo_source="$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
 
   log "Installing KaleidashOS Plymouth boot splash"
 
@@ -308,10 +382,11 @@ install_plymouth_identity() {
     -e 's/^Description=.*/Description=KaleidashOS boot splash/' \
     -e 's#^ImageDir=.*#ImageDir=/usr/share/plymouth/themes/kaleidash#' \
     "$theme_file"
-  sudo install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.png" \
-    "$PLYMOUTH_THEME_DIR/watermark.png"
+  sudo install -D -m 0755 "$SCRIPT_DIR/system/kaleidash-plymouth-sync" \
+    /usr/local/libexec/kaleidash-plymouth-sync
 
-  sudo plymouth-set-default-theme kaleidash -R
+  [[ -f "$logo_source" ]] || logo_source="$REPO_ROOT/brand/logo/kaleidash-mark.svg"
+  sudo /usr/local/libexec/kaleidash-plymouth-sync "$logo_source"
 }
 
 set_grub_key() {
@@ -381,6 +456,7 @@ log "Identity installation complete"
 printf '\n'
 printf 'Visible immediately: Fastfetch, hostnamectl, system information, and application launcher identity.\n'
 printf 'Visible after the next wallpaper/theme application: wallpaper-colored Fastfetch logo.\n'
-printf 'Visible after reboot or logout: GRUB, Plymouth, and the KaleidashOS Noctalia Greeter logo.\n'
+printf 'Visible after reboot or logout: GRUB, palette-colored Plymouth, and the synced KaleidashOS Noctalia Greeter.\n'
+printf 'After a later wallpaper change, update the next boot with: %s/identity/sync-boot-theme.sh\n' "$REPO_ROOT"
 printf '\n'
 printf 'Reboot when convenient. Restore Fedora branding with: %s/identity/uninstall.sh\n' "$REPO_ROOT"

@@ -13,6 +13,6 @@ To preview the complete example without replacing an existing configuration:
 fastfetch --config fastfetch/config.example.jsonc
 ```
 
-The example uses `kitty-direct`, which is the fastest graphical image path in Kitty and requires a PNG with both logo dimensions configured. If the image is not visible, confirm that Fastfetch is running inside Kitty and that output is not being piped.
+The example uses `kitty-direct`, which is the fastest graphical image path in Kitty and requires a PNG with both logo dimensions configured. Image recaching is enabled because Noctalia rewrites the same logo path whenever the wallpaper palette changes. If the image is not visible, confirm that Fastfetch is running inside Kitty and that output is not being piped.
 
 The OS module changes only Fastfetch's displayed label. It does not modify Fedora's `/etc/os-release` identity.

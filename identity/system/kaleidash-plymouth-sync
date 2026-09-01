@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+readonly THEME_DIR="/usr/share/plymouth/themes/kaleidash"
+readonly THEME_FILE="$THEME_DIR/kaleidash.plymouth"
+readonly SYNC_CONFIG="/var/lib/noctalia-greeter/sync.toml"
+readonly FALLBACK_LOGO="/usr/local/share/kaleidash-os/kaleidash-mark.svg"
+readonly DYNAMIC_TEMPLATE="/usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in"
+
+logo_source="${1:-$FALLBACK_LOGO}"
+[[ -f "$logo_source" ]] || logo_source="$FALLBACK_LOGO"
+[[ -f "$logo_source" ]] || exit 1
+[[ -f "$THEME_FILE" ]] || exit 1
+
+generated_svg="$(mktemp --suffix=.svg)"
+generated_logo="$(mktemp --suffix=.png)"
+trap 'rm -f -- "$generated_svg" "$generated_logo"' EXIT
+
+python3 - "$DYNAMIC_TEMPLATE" "$logo_source" "$SYNC_CONFIG" "$generated_svg" <<'PY'
+import re
+import sys
+import tomllib
+from pathlib import Path
+
+template_path, fallback_path, sync_path, output_path = map(Path, sys.argv[1:])
+palette = {}
+try:
+    with sync_path.open("rb") as stream:
+        palette = tomllib.load(stream).get("appearance", {}).get("palette", {})
+except (FileNotFoundError, OSError, tomllib.TOMLDecodeError):
+    pass
+
+hex_color = re.compile(r"^#[0-9a-fA-F]{6}$")
+
+def color(role: str, fallback: str) -> str:
+    value = palette.get(role)
+    return value if isinstance(value, str) and hex_color.fullmatch(value) else fallback
+
+if not palette or not template_path.is_file():
+    output_path.write_bytes(fallback_path.read_bytes())
+else:
+    rendered = template_path.read_text(encoding="utf-8")
+    replacements = {
+        "{{ colors.primary.default.hex }}": color("primary", "#7138f4"),
+        "{{ colors.secondary.default.hex }}": color("secondary", "#f31cad"),
+        "{{ colors.tertiary.default.hex }}": color("tertiary", "#ff775c"),
+    }
+    for token, value in replacements.items():
+        rendered = rendered.replace(token, value)
+    output_path.write_text(rendered, encoding="utf-8")
+PY
+
+rsvg-convert --width 220 --height 220 "$generated_svg" --output "$generated_logo"
+install -m 0644 "$generated_logo" "$THEME_DIR/watermark.png"
+
+python3 - "$THEME_FILE" "$SYNC_CONFIG" <<'PY'
+import re
+import sys
+import tomllib
+from pathlib import Path
+
+theme_path, sync_path = map(Path, sys.argv[1:])
+palette = {}
+try:
+    with sync_path.open("rb") as stream:
+        palette = tomllib.load(stream).get("appearance", {}).get("palette", {})
+except (FileNotFoundError, OSError, tomllib.TOMLDecodeError):
+    pass
+
+hex_color = re.compile(r"^#[0-9a-fA-F]{6}$")
+
+def color(role: str, fallback: str) -> str:
+    value = palette.get(role)
+    if not isinstance(value, str) or not hex_color.fullmatch(value):
+        value = fallback
+    return "0x" + value[1:].lower()
+
+values = {
+    "HorizontalAlignment": ".5",
+    "VerticalAlignment": ".63",
+    "WatermarkHorizontalAlignment": ".5",
+    "WatermarkVerticalAlignment": ".42",
+    "BackgroundStartColor": color("surface", "#101014"),
+    "BackgroundEndColor": color("surface_variant", "#17171d"),
+    "ProgressBarBackgroundColor": color("outline", "#484851"),
+    "ProgressBarForegroundColor": color("primary", "#a892ff"),
+}
+
+lines = theme_path.read_text(encoding="utf-8").splitlines()
+section_start = None
+section_end = len(lines)
+for index, line in enumerate(lines):
+    stripped = line.strip()
+    if stripped == "[two-step]":
+        section_start = index
+        continue
+    if section_start is not None and index > section_start and stripped.startswith("["):
+        section_end = index
+        break
+
+if section_start is None:
+    if lines and lines[-1].strip():
+        lines.append("")
+    lines.append("[two-step]")
+    section_start = len(lines) - 1
+    section_end = len(lines)
+
+for key, value in values.items():
+    pattern = re.compile(rf"^\s*{re.escape(key)}\s*=")
+    for index in range(section_start + 1, section_end):
+        if pattern.match(lines[index]):
+            lines[index] = f"{key}={value}"
+            break
+    else:
+        lines.insert(section_end, f"{key}={value}")
+        section_end += 1
+
+theme_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+PY
+
+plymouth-set-default-theme kaleidash -R

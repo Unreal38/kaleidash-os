@@ -16,6 +16,7 @@ function fastfetch --wraps fastfetch --description 'Fastfetch with the wallpaper
         command fastfetch \
             --logo "$kaleidash_logo" \
             --logo-type kitty-direct \
+            --logo-recache \
             --logo-width 28 \
             --logo-height 14 \
             --logo-padding-right 3 \
@@ -24,6 +25,7 @@ function fastfetch --wraps fastfetch --description 'Fastfetch with the wallpaper
         command fastfetch \
             --logo "$kaleidash_logo" \
             --logo-type kitty \
+            --logo-recache \
             --logo-width 28 \
             --logo-height 14 \
             --logo-padding-right 3 \

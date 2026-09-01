@@ -1,12 +1,52 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-readonly MARK="/usr/local/share/kaleidash-os/kaleidash-mark-mono.svg"
+readonly TEMPLATE="/usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in"
+readonly FALLBACK="/usr/local/share/kaleidash-os/kaleidash-mark.svg"
+readonly SYNC_CONFIG="/var/lib/noctalia-greeter/sync.toml"
 
-[[ -f "$MARK" ]] || exit 0
+[[ -f "$TEMPLATE" ]] || exit 0
+
+generated="$(mktemp)"
+trap 'rm -f -- "$generated"' EXIT
+
+python3 - "$TEMPLATE" "$FALLBACK" "$SYNC_CONFIG" "$generated" <<'PY'
+import re
+import sys
+import tomllib
+from pathlib import Path
+
+template_path, fallback_path, sync_path, output_path = map(Path, sys.argv[1:])
+palette = {}
+
+try:
+    with sync_path.open("rb") as stream:
+        palette = tomllib.load(stream).get("appearance", {}).get("palette", {})
+except (FileNotFoundError, OSError, tomllib.TOMLDecodeError):
+    pass
+
+hex_color = re.compile(r"^#[0-9a-fA-F]{6}$")
+
+def color(role: str, fallback: str) -> str:
+    value = palette.get(role)
+    return value if isinstance(value, str) and hex_color.fullmatch(value) else fallback
+
+if not palette and fallback_path.is_file():
+    output_path.write_bytes(fallback_path.read_bytes())
+else:
+    rendered = template_path.read_text(encoding="utf-8")
+    replacements = {
+        "{{ colors.primary.default.hex }}": color("primary", "#7138f4"),
+        "{{ colors.secondary.default.hex }}": color("secondary", "#f31cad"),
+        "{{ colors.tertiary.default.hex }}": color("tertiary", "#ff775c"),
+    }
+    for token, value in replacements.items():
+        rendered = rendered.replace(token, value)
+    output_path.write_text(rendered, encoding="utf-8")
+PY
 
 while IFS= read -r -d '' logo_path; do
   rm -f -- "$logo_path"
-  install -m 0644 "$MARK" "$logo_path"
+  install -m 0644 "$generated" "$logo_path"
 done < <(find /usr/share/noctalia-greeter /usr/local/share/noctalia-greeter \
   -name noctalia.svg -print0 2>/dev/null || true)

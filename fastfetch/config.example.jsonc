@@ -5,6 +5,7 @@
     "type": "kitty-direct",
     "width": 28,
     "height": 14,
+    "recache": true,
     "padding": {
       "right": 3
     }

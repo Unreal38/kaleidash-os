@@ -9,7 +9,7 @@ This layer applies the KaleidashOS identity to an existing Fedora installation w
 - Desktop icon and an About KaleidashOS launcher entry
 - Fastfetch with a graphical Kinetic K
 - Automatic Fastfetch logo recoloring through a Noctalia v5 user template
-- Noctalia Greeter logo, tinted by the synchronized greeter palette
+- Noctalia control-center icon and Greeter logo colored by the synchronized palette
 - KaleidashOS GRUB theme
 - KaleidashOS Plymouth boot splash based on Fedora's password-capable spinner theme
 - TTY and remote-login identification
@@ -26,9 +26,19 @@ Run as the normal desktop user from a repository checkout:
 
 The installer requests `sudo` for system-owned files. It installs `plymouth-theme-spinner` and `librsvg2-tools`, creates backups under `/var/lib/kaleidash-os`, and stores user-config backups under `~/.local/state/kaleidash-os`.
 
-After installation, reapply the current Noctalia theme or change the wallpaper once. Noctalia will render the Kinetic K using the current `primary`, `secondary`, and `tertiary` colors.
+After installation, reapply the current Noctalia theme or change the wallpaper once. Noctalia will render the Kinetic K using the current `primary`, `secondary`, and `tertiary` colors. The control-center button uses that same live SVG.
+
+The installer selects the Greeter's `Synced` scheme. Its wallpaper and palette continue to come from Noctalia's normal Auto-Sync Greeter feature. A systemd path unit rebuilds the Greeter K whenever `/var/lib/noctalia-greeter/sync.toml` changes.
 
 Reboot when convenient to see GRUB, Plymouth, and the greeter branding.
+
+Plymouth is stored in the initramfs, so it cannot consume live desktop files during boot. The installer snapshots the current Noctalia logo and Greeter palette. After changing wallpaper later, update the next boot splash explicitly:
+
+```fish
+./identity/sync-boot-theme.sh
+```
+
+This renders a 220 px K above the spinner, applies the current `surface`, `surface_variant`, `outline`, and `primary` colors, and rebuilds the initramfs once.
 
 The installer makes the GRUB menu visible for two seconds so the identity is actually shown. Uninstalling restores the original GRUB defaults and `grubenv`, including Fedora's previous auto-hide behavior.
 

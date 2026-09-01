@@ -82,6 +82,7 @@ restore_user_file() {
 
 log "Restoring Fedora system identity"
 sudo systemctl disable --now kaleidash-greeter-brand.service >/dev/null 2>&1 || true
+sudo systemctl disable --now kaleidash-greeter-brand.path >/dev/null 2>&1 || true
 restore_system_file /etc/os-release os-release
 restore_system_file /etc/lsb-release lsb-release
 restore_system_file /etc/issue issue
@@ -110,8 +111,12 @@ sudo rm -f -- \
   /usr/share/pixmaps/kaleidash.svg \
   /usr/share/applications/kaleidash-about.desktop \
   /usr/local/share/kaleidash-os/kaleidash-mark-mono.svg \
+  /usr/local/share/kaleidash-os/kaleidash-mark.svg \
+  /usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in \
   /usr/local/libexec/kaleidash-greeter-brand \
-  /etc/systemd/system/kaleidash-greeter-brand.service
+  /usr/local/libexec/kaleidash-plymouth-sync \
+  /etc/systemd/system/kaleidash-greeter-brand.service \
+  /etc/systemd/system/kaleidash-greeter-brand.path
 sudo systemctl daemon-reload
 sudo rm -rf -- "$GRUB_THEME_DIR" "$PLYMOUTH_THEME_DIR"
 
