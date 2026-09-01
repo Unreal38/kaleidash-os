@@ -1,0 +1,21 @@
+# scope	kind	source	destination	extensions
+home	tree	.config/niri	home/.config/niri	kdl,conf,sh
+home	tree	.config/noctalia	home/.config/noctalia	toml
+home	file	.local/state/noctalia/settings.toml	home/.local/state/noctalia/settings.toml	-
+home	tree	.config/kitty	home/.config/kitty	conf
+home	tree	.config/fish	home/.config/fish	fish
+home	file	.config/starship.toml	home/.config/starship.toml	-
+home	tree	.config/fastfetch	home/.config/fastfetch	json,jsonc
+home	tree	.config/yazi	home/.config/yazi	toml,lua
+home	file	.config/ncspot/config.toml	home/.config/ncspot/config.toml	-
+home	file	.config/gtk-3.0/settings.ini	home/.config/gtk-3.0/settings.ini	-
+home	file	.config/gtk-4.0/settings.ini	home/.config/gtk-4.0/settings.ini	-
+home	file	.config/kdeglobals	home/.config/kdeglobals	-
+home	file	.config/kcminputrc	home/.config/kcminputrc	-
+home	file	.config/qt5ct/qt5ct.conf	home/.config/qt5ct/qt5ct.conf	-
+home	file	.config/qt6ct/qt6ct.conf	home/.config/qt6ct/qt6ct.conf	-
+home	file	.config/Kvantum/kvantum.kvconfig	home/.config/Kvantum/kvantum.kvconfig	-
+home	tree	.config/fontconfig	home/.config/fontconfig	conf
+home	tree	.config/environment.d	home/.config/environment.d	conf
+system	file	etc/greetd/config.toml	system/etc/greetd/config.toml	-
+system	file	var/lib/noctalia-greeter/greeter.toml	system/var/lib/noctalia-greeter/greeter.toml	-

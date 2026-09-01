@@ -18,7 +18,7 @@ This repository is in its initial identity and inventory phase. It will grow int
 
 - `brand/` - KaleidashOS identity and vector logo assets
 - `bootstrap/` and `bootstrap.sh` - safe manifest-driven installation planning and application
-- `config/` - reversible portable desktop configuration bundles
+- `config/` - privacy-conscious configuration capture and reversible portable desktop bundles
 - `fastfetch/` - example Fastfetch identity and graphical-logo configuration
 - `identity/` - reversible local branding for metadata, desktop, terminal, greeter, GRUB, and Plymouth
 - `inventory/` - privacy-conscious capture of packages, repositories, services, and component versions
@@ -35,4 +35,4 @@ This repository is in its initial identity and inventory phase. It will grow int
 
 ## Status
 
-Early development. Identity, inventory capture, the first manifest-driven bootstrap installer, and the wallpaper-reactive lock-screen bundle are operational. The reviewed package split defines a Fedora KDE substrate, a portable KaleidashOS desktop base, and optional profiles. External application recipes and the remaining portable configuration bundles are the next milestones.
+Early development. Identity, inventory capture, the first manifest-driven bootstrap installer, the wallpaper-reactive lock-screen bundle, and portable desktop-config capture are operational. The reviewed package split defines a Fedora KDE substrate, a portable KaleidashOS desktop base, and optional profiles. External application recipes and deployment bundles derived from the captured configuration are the next milestones.

@@ -1,0 +1,9 @@
+output "DP-9" {
+    transform "90"
+}
+
+output "HDMI-7" {
+    focus-at-startup
+}
+
+spawn-at-startup "@FIXTURE_HOME@/.config/niri/scripts/start-shell.sh"

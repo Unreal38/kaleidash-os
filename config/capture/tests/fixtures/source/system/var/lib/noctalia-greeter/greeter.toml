@@ -1,0 +1,15 @@
+[appearance]
+scheme = "synced"
+
+[output]
+width = 2560
+height = 1440
+
+[output.scales]
+HDMI-7 = 1.0
+
+[user]
+default = "testuser"
+
+[session]
+default = "niri"

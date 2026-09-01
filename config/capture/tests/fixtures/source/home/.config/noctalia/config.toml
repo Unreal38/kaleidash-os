@@ -1,0 +1,8 @@
+[shell]
+font_family = "Fixture Sans"
+
+[location]
+name = "Private Place"
+
+[bar.main]
+monitor = "HDMI-7"

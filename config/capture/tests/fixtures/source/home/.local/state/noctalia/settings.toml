@@ -1,0 +1,11 @@
+[desktop_widgets]
+enabled = true
+
+[desktop_widgets.widget.clock]
+type = "clock"
+output = "DP-9"
+cx = 300.0
+cy = 400.0
+
+[wallpaper]
+directory = "@FIXTURE_HOME@/Pictures/Wallpapers"

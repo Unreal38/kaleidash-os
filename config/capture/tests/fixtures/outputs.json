@@ -1,0 +1,10 @@
+{
+  "DP-9": {
+    "name": "DP-9",
+    "logical": {"x": 0, "y": 0, "width": 1080, "height": 1920}
+  },
+  "HDMI-7": {
+    "name": "HDMI-7",
+    "logical": {"x": 1080, "y": 240, "width": 2560, "height": 1440}
+  }
+}
