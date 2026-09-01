@@ -90,16 +90,21 @@ backup_user_file() {
   fi
 }
 
-write_os_release() {
-  local generated
-  generated="$(mktemp)"
-
-  "$SCRIPT_DIR/system/generate-os-release" /usr/lib/os-release "$generated" "$FEDORA_VERSION_ID"
-
+install_os_release_identity() {
   backup_system_file /etc/os-release os-release
-  sudo install -m 0644 "$generated" /etc/os-release.kaleidash-new
-  sudo mv -fT -- /etc/os-release.kaleidash-new /etc/os-release
-  rm -f -- "$generated"
+  sudo install -D -m 0755 "$SCRIPT_DIR/system/generate-os-release" \
+    /usr/local/libexec/kaleidash-generate-os-release
+  sudo install -D -m 0755 "$SCRIPT_DIR/system/kaleidash-os-release-sync" \
+    /usr/local/libexec/kaleidash-os-release-sync
+  sudo install -D -m 0644 "$SCRIPT_DIR/system/kaleidash-os-release-sync.service" \
+    /etc/systemd/system/kaleidash-os-release-sync.service
+  sudo install -D -m 0644 "$SCRIPT_DIR/system/kaleidash-os-release-sync.path" \
+    /etc/systemd/system/kaleidash-os-release-sync.path
+  sudo systemctl daemon-reload
+  sudo systemctl enable kaleidash-os-release-sync.service \
+    kaleidash-os-release-sync.path >/dev/null
+  sudo systemctl start kaleidash-os-release-sync.service
+  sudo systemctl start kaleidash-os-release-sync.path
 }
 
 install_prerequisites() {
@@ -512,7 +517,7 @@ install_grub_identity() {
 
 install_prerequisites
 log "Applying system metadata"
-write_os_release
+install_os_release_identity
 write_text_identity
 install_desktop_identity
 install_user_identity

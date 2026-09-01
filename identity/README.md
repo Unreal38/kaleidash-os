@@ -4,7 +4,7 @@ This layer applies the KaleidashOS identity to an existing Fedora installation w
 
 ## Surfaces
 
-- System metadata through a reversible `/etc/os-release` override
+- Display metadata through a reversible, Fedora-compatible `/etc/os-release` overlay
 - `hostnamectl`, desktop system-information panels, and distro detection
 - Desktop icon and an About KaleidashOS launcher entry
 - Fastfetch with a graphical Kinetic K
@@ -15,7 +15,7 @@ This layer applies the KaleidashOS identity to an existing Fedora installation w
 - KaleidashOS Plymouth boot splash based on Fedora's password-capable spinner theme
 - TTY and remote-login identification
 
-Fedora compatibility is advertised through `ID_LIKE=fedora`. Some third-party installation scripts check only `ID=fedora`; use their Fedora instructions manually if they reject `ID=kaleidash`.
+KaleidashOS is represented as a presentation layer over the installed Fedora edition. `NAME`, `PRETTY_NAME`, `VARIANT`, `LOGO`, and project URLs are branded, while Fedora's machine-readable `ID`, `ID_LIKE`, `VERSION_ID`, `VARIANT_ID`, CPE, support-product, and release fields are preserved verbatim. DNF, COPR, release upgrades, and third-party installers therefore continue to detect the system as Fedora.
 
 ## Install
 
@@ -49,7 +49,7 @@ The installer makes the GRUB menu visible for two seconds so the identity is act
 
 The GRUB entry intentionally appears as `KaleidashOS` because the installer sets `GRUB_DISTRIBUTOR` to the branded name. The underlying Fedora release and variant remain recorded from `/usr/lib/os-release` by the inventory collector.
 
-After a Fedora major-version upgrade, rerun `./identity/install.sh` so the KaleidashOS version fields are refreshed from Fedora's new `/usr/lib/os-release`.
+The installer enables `kaleidash-os-release-sync.service` and its path watcher. They regenerate the branded overlay from Fedora's authoritative `/usr/lib/os-release` at every boot and whenever that vendor file changes. After a Fedora major-version upgrade, KaleidashOS therefore adopts the new Fedora version automatically without pinning DNF or COPR to the previous release.
 
 ## Restore Fedora branding
 
@@ -66,10 +66,11 @@ The restore script reinstates the original files and symlinks, regenerates GRUB 
 The identity layer deliberately does not alter:
 
 - Fedora DNF repositories
+- Fedora package resolution or COPR detection
 - RPM macros or package provenance
 - Fedora signing keys
 - kernel package names
 - Secure Boot configuration
 - the Plasma fallback session
 
-The vendor release data remains available at `/usr/lib/os-release`. The KaleidashOS identity lives in `/etc/os-release`, which is the administrator override location defined by the `os-release` specification.
+The vendor release data remains authoritative at `/usr/lib/os-release`. The generated `/etc/os-release` changes display-oriented fields only and is refreshed automatically from the vendor file. Uninstalling restores the exact original file or symlink.

@@ -85,6 +85,8 @@ sudo systemctl disable --now kaleidash-theme-sync.path >/dev/null 2>&1 || true
 sudo systemctl stop kaleidash-theme-sync.service >/dev/null 2>&1 || true
 sudo systemctl disable --now kaleidash-greeter-brand.service >/dev/null 2>&1 || true
 sudo systemctl disable --now kaleidash-greeter-brand.path >/dev/null 2>&1 || true
+sudo systemctl disable --now kaleidash-os-release-sync.service >/dev/null 2>&1 || true
+sudo systemctl disable --now kaleidash-os-release-sync.path >/dev/null 2>&1 || true
 restore_system_file /etc/os-release os-release
 restore_system_file /etc/lsb-release lsb-release
 restore_system_file /etc/issue issue
@@ -116,10 +118,14 @@ sudo rm -f -- \
   /usr/local/share/kaleidash-os/kaleidash-mark.svg \
   /usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in \
   /usr/local/libexec/kaleidash-greeter-brand \
+  /usr/local/libexec/kaleidash-generate-os-release \
+  /usr/local/libexec/kaleidash-os-release-sync \
   /usr/local/libexec/kaleidash-plymouth-sync \
   /usr/local/libexec/kaleidash-theme-sync \
   /etc/systemd/system/kaleidash-greeter-brand.service \
   /etc/systemd/system/kaleidash-greeter-brand.path \
+  /etc/systemd/system/kaleidash-os-release-sync.service \
+  /etc/systemd/system/kaleidash-os-release-sync.path \
   /etc/systemd/system/kaleidash-theme-sync.service \
   /etc/systemd/system/kaleidash-theme-sync.path \
   /etc/kaleidash-os/identity.env \

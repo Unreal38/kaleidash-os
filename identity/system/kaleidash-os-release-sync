@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+readonly VENDOR_RELEASE="/usr/lib/os-release"
+readonly TARGET_RELEASE="/etc/os-release"
+readonly GENERATOR="/usr/local/libexec/kaleidash-generate-os-release"
+
+[[ -r "$VENDOR_RELEASE" ]] || {
+  printf 'KaleidashOS: cannot read %s\n' "$VENDOR_RELEASE" >&2
+  exit 1
+}
+[[ -x "$GENERATOR" ]] || {
+  printf 'KaleidashOS: missing os-release generator: %s\n' "$GENERATOR" >&2
+  exit 1
+}
+
+# shellcheck disable=SC1091
+source "$VENDOR_RELEASE"
+if [[ "${ID:-}" != "fedora" && " ${ID_LIKE:-} " != *" fedora "* ]]; then
+  printf 'KaleidashOS: refusing to brand a non-Fedora system\n' >&2
+  exit 1
+fi
+[[ -n "${VERSION_ID:-}" ]] || {
+  printf 'KaleidashOS: Fedora VERSION_ID is missing\n' >&2
+  exit 1
+}
+
+generated="$(mktemp)"
+trap 'rm -f -- "$generated"' EXIT
+"$GENERATOR" "$VENDOR_RELEASE" "$generated" "$VERSION_ID"
+
+if [[ -f "$TARGET_RELEASE" ]] && cmp -s "$generated" "$TARGET_RELEASE"; then
+  exit 0
+fi
+
+install -m 0644 "$generated" /etc/os-release.kaleidash-new
+mv -fT -- /etc/os-release.kaleidash-new "$TARGET_RELEASE"

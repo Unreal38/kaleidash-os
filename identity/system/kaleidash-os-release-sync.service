@@ -1,0 +1,11 @@
+[Unit]
+Description=Refresh KaleidashOS display metadata from Fedora
+After=local-fs.target
+ConditionPathExists=/usr/lib/os-release
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/kaleidash-os-release-sync
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch Fedora release metadata for KaleidashOS refresh
+
+[Path]
+PathChanged=/usr/lib/os-release
+Unit=kaleidash-os-release-sync.service
+
+[Install]
+WantedBy=multi-user.target

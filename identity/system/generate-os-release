@@ -21,18 +21,15 @@ def main() -> int:
     updates = {
         "NAME": "KaleidashOS",
         "PRETTY_NAME": f"KaleidashOS {version_id} (Fedora-based)",
-        "ID": "kaleidash",
-        "ID_LIKE": "fedora",
-        "VERSION": f"{version_id} (KaleidashOS)",
-        "VERSION_ID": version_id,
         "VARIANT": "KaleidashOS Desktop",
-        "VARIANT_ID": "kaleidash",
         "ANSI_COLOR": "0;35",
         "LOGO": "kaleidash",
         "HOME_URL": "https://github.com/Unreal38/kaleidash-os",
         "DOCUMENTATION_URL": "https://github.com/Unreal38/kaleidash-os",
         "SUPPORT_URL": "https://github.com/Unreal38/kaleidash-os/issues",
         "BUG_REPORT_URL": "https://github.com/Unreal38/kaleidash-os/issues",
+        "KALEIDASHOS_ID": "kaleidash",
+        "KALEIDASHOS_VERSION_ID": version_id,
     }
 
     lines = source_path.read_text(encoding="utf-8").splitlines()
