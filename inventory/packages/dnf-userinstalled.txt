@@ -118,6 +118,7 @@ discord
 dnf5
 dnf5-plugins
 dnsmasq
+dolphin
 dolphin-emu
 dolphin-emu-data
 dos2unix
@@ -589,6 +590,7 @@ rdma-core-common
 readline
 realmd
 realtek-firmware
+resvg
 rootfiles
 rpm
 rpmfusion-free-release

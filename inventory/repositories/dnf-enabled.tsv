@@ -5,6 +5,7 @@ copr:copr.fedorainfracloud.org:codifryed:CoolerControl	Copr repo for CoolerContr
 copr:copr.fedorainfracloud.org:errornointernet:quickshell	Copr repo for quickshell owned by errornointernet
 copr:copr.fedorainfracloud.org:g3tchoo:prismlauncher	Copr repo for prismlauncher owned by g3tchoo
 copr:copr.fedorainfracloud.org:leloubil:wl-clip-persist	Copr repo for wl-clip-persist owned by leloubil
+copr:copr.fedorainfracloud.org:lihaohong:yazi	Copr repo for yazi owned by lihaohong
 fedora	Fedora 44 - x86_64
 fedora-cisco-openh264	Fedora 44 openh264 (From Cisco) - x86_64
 rpmfusion-free	RPM Fusion for Fedora 44 - Free

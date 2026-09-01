@@ -3,5 +3,6 @@ system	com.modrinth.ModrinthApp	flathub	stable	0.19.1
 system	com.vysp3r.ProtonPlus	flathub	stable	0.6.5
 system	dev.lizardbyte.app.Sunshine	flathub	stable	2026.516.143833
 system	info.cemu.Cemu	flathub	stable	2.6
+system	io.github.hrkfdn.ncspot	flathub	stable	1.3.4
 system	io.github.ishidawg.LeShade	leshade-origin	master	1.0.9
 system	net.davidotek.pupgui2	flathub	stable	2.15.1

@@ -120,6 +120,7 @@ discord	1.0.156-1.fc44	x86_64	User	terra
 dnf5	5.4.3.0-2.fc44	x86_64	User	updates
 dnf5-plugins	5.4.3.0-2.fc44	x86_64	Group	updates
 dnsmasq	2.92rel2-9.fc44	x86_64	Group	updates
+dolphin	26.08.0-1.fc44	x86_64	User	updates
 dolphin-emu	2503a-15.fc44	x86_64	External User	updates
 dolphin-emu-data	2503a-15.fc44	noarch	External User	updates
 dos2unix	7.5.6-1.fc44	x86_64	Group	updates
@@ -613,6 +614,7 @@ rdma-core-common	61.0-2.fc44	noarch	External User	<unknown>
 readline	8.3-4.fc44	i686	External User	<unknown>
 realmd	0.17.1-19.fc44	x86_64	Group	<unknown>
 realtek-firmware	20260810-1.fc44	noarch	Group	updates
+resvg	0.47.0-1.fc44	x86_64	User	copr:copr.fedorainfracloud.org:lihaohong:yazi
 rootfiles	9.0-6.fc44	noarch	Group	<unknown>
 rpm	6.0.2-1.fc44	x86_64	Group	updates
 rpmfusion-free-release	44-3	noarch	User	<unknown>
