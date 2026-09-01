@@ -1,1 +1,3 @@
+dnf5-plugins
+flatpak
 swaylock

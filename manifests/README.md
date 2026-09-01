@@ -1,6 +1,6 @@
 # KaleidashOS manifests
 
-These files translate the captured workstation into portable intent. They do not replay every installed RPM.
+These files translate the captured workstation into portable intent. They do not replay every installed RPM. The root `bootstrap.sh` now resolves them into a reviewable installation plan and can apply the reviewed package layers.
 
 The Fedora KDE image remains the substrate. Packages recorded with DNF's `Group` reason, dependency packages, kernels, firmware, and generated service units are left to Fedora unless a profile explicitly needs them.
 
@@ -33,6 +33,14 @@ Run:
 ```
 
 Validation checks sorting, duplicates, captured-package membership, repository IDs, Flatpak references, and service names. It deliberately does not install or enable anything.
+
+Preview the default installation resolved from these manifests with:
+
+```fish
+./bootstrap.sh plan
+```
+
+Optional profiles can be selected with repeated `--profile NAME` arguments. See `bootstrap/README.md` before running the mutating `install` command.
 
 ## Classification policy
 
