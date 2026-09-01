@@ -24,7 +24,7 @@ The collector does not use `sudo`. It reads Fedora's vendor identity from `/usr/
 | `system/base.env` | Fedora vendor ID, release, variant, platform, and CPU architecture. |
 | `system/component-versions.tsv` | Reference versions for the shell, compositor, terminal, and related tools when available. |
 
-The DNF package list uses `repoquery --installed --userinstalled`, which captures packages installed by user request or through groups/profiles rather than every dependency. The reference file remains diagnostic only; a future bootstrapper should install package names and let the target Fedora release resolve compatible versions.
+The DNF package list uses `repoquery --userinstalled`, which captures packages installed by user request or through groups/profiles rather than every dependency. The reference file remains diagnostic only; a future bootstrapper should install package names and let the target Fedora release resolve compatible versions.
 
 ## Privacy boundary
 

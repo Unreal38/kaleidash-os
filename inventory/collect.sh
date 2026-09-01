@@ -81,11 +81,11 @@ mkdir -p -- \
   "$staging_dir/system"
 
 log "Reading explicitly installed RPM packages"
-dnf -q repoquery --installed --userinstalled --queryformat '%{name}\n' \
+dnf -q repoquery --userinstalled --queryformat '%{name}\n' \
   | sed '/^[[:space:]]*$/d' \
   | sort -u > "$staging_dir/packages/dnf-userinstalled.txt"
 
-dnf -q repoquery --installed --userinstalled \
+dnf -q repoquery --userinstalled \
   --queryformat '%{name}\t%{evr}\t%{arch}\t%{reason}\t%{from_repo}\n' \
   | sed '/^[[:space:]]*$/d' \
   | sort -u > "$staging_dir/packages/dnf-reference.tsv"
