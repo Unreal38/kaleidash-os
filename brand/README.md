@@ -20,7 +20,7 @@ The primary logo is the **Kinetic K**. Its sharp diagonal strokes express fast w
 | `logo/kaleidash-mark-mono.svg` | Single-color and high-contrast use |
 | `logo/kaleidash-mark-compact.svg` | Fastfetch and other small terminal contexts |
 
-The primary geometry must remain recognizable without color. Wallpaper integration should recolor the facets without changing their positions or silhouette.
+The primary geometry must remain recognizable without color. Wallpaper integration should recolor the four base planes without changing their positions or silhouette. Smaller facets use only translucent white highlights and black shadows, preserving a consistent top-left light source without introducing colors that are absent from the active wallpaper palette.
 
 The folded-ribbon concept is reserved for future animation during login, wallpaper transitions, and promotional motion graphics. It is not a replacement static logo.
 

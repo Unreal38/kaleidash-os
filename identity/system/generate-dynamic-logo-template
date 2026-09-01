@@ -19,6 +19,16 @@ GRADIENT_ROLES = {
     "gradient3": ("primary", "secondary", "tertiary"),
 }
 
+NEUTRAL_FACETS = (
+    "shape01",
+    "shape02",
+    "shape03",
+    "shape04",
+    "shape05",
+    "shape06",
+    "shape3",
+)
+
 
 def token(role: str) -> str:
     return "{{ colors." + role + ".default.hex }}"
@@ -50,10 +60,14 @@ def main() -> int:
         for stop, role in zip(stops, roles, strict=True):
             stop.set("stop-color", token(role))
 
-    shadow = root.find(f".//{{{SVG}}}path[@id='shape3']")
-    if shadow is None:
-        raise ValueError(f"{source}: required shadow path 'shape3' is missing")
-    shadow.set("fill", token("primary"))
+    for facet_id in NEUTRAL_FACETS:
+        facet = root.find(f".//{{{SVG}}}path[@id='{facet_id}']")
+        if facet is None:
+            raise ValueError(f"{source}: required lighting facet {facet_id!r} is missing")
+        if facet.get("fill", "").lower() not in {"#000000", "#ffffff"}:
+            raise ValueError(
+                f"{source}: lighting facet {facet_id!r} must use neutral black or white"
+            )
 
     output.parent.mkdir(parents=True, exist_ok=True)
     tree.write(output, encoding="utf-8", xml_declaration=True)
