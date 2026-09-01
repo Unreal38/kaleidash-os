@@ -1,5 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">KaleidashOS kinetic K monochrome</title>
-  <desc id="desc">A single-color sharp folded K.</desc>
-  <path fill="#fff" d="M94 438 151 111 279 58l-57 188-19 26L462 92 236 312l226 112H337L203 308l31 7-47 84Z" fill-rule="evenodd" clip-rule="evenodd"/>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="15.375pt"
+    height="15.375pt"
+    viewBox="0 0 15.375 15.375">
+<defs>
+  <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.0571428571428561" y1="0.927710843373496" x2="0.92142857142857" y2="-0.06024096385542" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#6b6a7b" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient1" gradientUnits="objectBoundingBox" x1="0.0115384615384627" y1="0.845454545454545" x2="1" y2="-3.88578058618805e-16" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#6b6a7b" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient2" gradientUnits="objectBoundingBox" x1="0.194594594594594" y1="0.0578947368421054" x2="0.599999999999999" y2="0.978947368421053" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#6b6a7b" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient3" gradientUnits="objectBoundingBox" x1="0.0115830115830103" y1="-0.0151515151515129" x2="0.976833976833976" y2="1" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#6b6a7b" offset="1" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+<path id="shape0" transform="matrix(0.0375 0 0 0.0375 3.53203125 11.190234375)" fill="url(#gradient0)" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0 138.484L90.4063 0L135.516 51.7031L92.5625 100.344Z" sodipodi:nodetypes="ccccc"/><path id="shape1" transform="matrix(0.037478866580089 -0.00125879302187007 0.00125879302187007 0.037478866580089 7.26554951481157 3.24205149269931)" fill="url(#gradient1)" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0 186.085L239.853 0L58.9567 233.879Z" sodipodi:nodetypes="cccc"/><path id="shape2" transform="matrix(0.0375 0 0 0.0375 3.52500000000001 2.175)" fill="url(#gradient2)" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0 380L57 53L185 0L134.969 191.016L109 214Z" sodipodi:nodetypes="cccccc"/><path id="shape3" transform="matrix(0.0375 0 0 0.0375 5.67187499999999 2.175)" opacity="0.42" fill="#ffffff" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0 53L128 0L77.9844 190.812L52 214Z" sodipodi:nodetypes="ccccc"/><path id="shape4" transform="matrix(0.0375 0 0 0.0375 6.93046875000002 10.163671875)" fill="url(#gradient3)" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M18.625 0L224.313 147.219L99.3125 147.219L0 28.4063Z" sodipodi:nodetypes="ccccc"/>
 </svg>

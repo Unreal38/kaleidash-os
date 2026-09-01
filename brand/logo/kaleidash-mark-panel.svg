@@ -1,5 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
-  <title id="title">KaleidashOS panel glyph</title>
-  <desc id="desc">A bold monoline kinetic K optimized for Noctalia's panel.</desc>
-  <path d="M9 3 5 29M7 16 27.5 3.5M7 16 27 28.5" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="15.375pt"
+    height="15.375pt"
+    viewBox="0 0 15.375 15.375">
+<defs>
+  <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.0571428571428561" y1="0.927710843373496" x2="0.92142857142857" y2="-0.06024096385542" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#6b6a7b" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient1" gradientUnits="objectBoundingBox" x1="0.0115384615384627" y1="0.845454545454545" x2="1" y2="-3.88578058618805e-16" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#6b6a7b" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient2" gradientUnits="objectBoundingBox" x1="0.194594594594594" y1="0.0578947368421054" x2="0.599999999999999" y2="0.978947368421053" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#6b6a7b" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient3" gradientUnits="objectBoundingBox" x1="0.0115830115830103" y1="-0.0151515151515129" x2="0.976833976833976" y2="1" spreadMethod="pad">
+   <stop stop-color="#ffffff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#6b6a7b" offset="1" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+<path id="shape0" transform="matrix(0.0375 0 0 0.0375 1.52578125000002 9.71835937500001)" fill="url(#gradient0)" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0 138.484C18.0813 110.787 48.2167 64.6259 90.4063 0L135.516 51.7031C119.138 77.4022 104.82 93.6158 92.5625 100.344C75.3833 110.972 48.0292 140.685 0 138.484Z" sodipodi:nodetypes="ccccc"/><path id="shape1" transform="matrix(0.037478866580089 -0.00125879302187007 0.00125879302187007 0.037478866580089 5.2584359624834 1.74446538536771)" fill="url(#gradient1)" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0 186.771C111.931 99.9313 144.954 -9.6991 239.853 0.686016C249.303 49.3279 189.005 127.288 58.9567 234.565C31.4436 212.261 11.7913 196.33 0 186.771Z" sodipodi:nodetypes="cccc"/><path id="shape2" transform="matrix(0.0375 0 0 0.0375 1.25181482291223 0.703125000000013)" fill="url(#gradient2)" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M7.11827 380C-7.81506 313.933 -3.81506 193.933 64.1183 53C81.0516 30.7333 120.218 0.566667 192.118 0C197.445 41.5365 180.674 103.053 141.993 188.86L116.118 214C65.2516 291.467 28.9183 346.8 7.11827 380Z" sodipodi:nodetypes="cccccc"/><path id="shape3" transform="matrix(0.0375 0 0 0.0375 3.66562500000001 0.703125000000011)" opacity="0.42" fill="#ffffff" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0 53C12.9333 29.4 54.5688 3.01458 128 0C134.622 38.9124 117.575 100.641 77.6094 188.937L52 214C27.7333 138.867 10.4 85.2 0 53Z" sodipodi:nodetypes="ccccc"/><path id="shape4" transform="matrix(0.0375 0 0 0.0375 4.92421875000004 8.69179687500001)" fill="url(#gradient3)" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M18.625 0C139.613 52.0355 208.175 101.109 224.313 147.219C200.813 161.719 145.146 167.719 99.3125 147.219C68.7833 134.123 35.6792 94.5189 0 28.4063Z" sodipodi:nodetypes="ccccc"/>
 </svg>
