@@ -260,4 +260,6 @@ log "Capture complete"
 printf '  Captured files: %d\n' "$captured_count"
 printf '  Missing or skipped allowlist entries: %d\n' "$skipped_count"
 printf '  Snapshot: %s\n\n' "$output_dir"
-printf 'Review with: git diff -- config/snapshot\n'
+printf 'Review with:\n'
+printf '  git add -N -- config/snapshot\n'
+printf '  git diff -- config/snapshot\n'

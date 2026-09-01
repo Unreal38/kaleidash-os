@@ -8,9 +8,12 @@ Run as the normal desktop user from the repository root:
 
 ```fish
 ./config/capture/collect.sh
+git add -N -- config/snapshot
 git diff -- config/snapshot
 ./config/capture/validate-snapshot config/snapshot
 ```
+
+`git add -N` records only intent-to-add, making new snapshot files visible to `git diff` without staging their contents.
 
 The collector reads only entries in `allowlist.tsv`. Missing applications are skipped. The generated `config/snapshot/manifest.tsv` records normalized modes and SHA-256 checksums.
 
