@@ -158,9 +158,10 @@ install_user_identity() {
   local fish_function="$USER_CONFIG_HOME/fish/functions/fastfetch.fish"
   local noctalia_config="$USER_CONFIG_HOME/noctalia/kaleidash-identity.toml"
   local noctalia_template="$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-dynamic.svg.in"
-  local panel_template="$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-panel.svg.in"
+  local legacy_panel_template="$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-panel.svg.in"
   local palette_template="$USER_CONFIG_HOME/noctalia/templates/kaleidash-palette.toml.in"
-  local panel_logo="$USER_DATA_HOME/kaleidash-os/kaleidash-mark-panel.svg"
+  local legacy_panel_logo="$USER_DATA_HOME/kaleidash-os/kaleidash-mark-panel.svg"
+  local panel_logo="$USER_DATA_HOME/kaleidash-os/kaleidash-panel-glyph.svg"
   local palette_file="$USER_DATA_HOME/kaleidash-os/palette.toml"
   local generated
 
@@ -174,9 +175,10 @@ install_user_identity() {
   backup_user_file "$fish_function" fish-fastfetch
   backup_user_file "$noctalia_config" noctalia-identity-config
   backup_user_file "$noctalia_template" noctalia-logo-template
-  backup_user_file "$panel_template" noctalia-panel-logo-template
+  backup_user_file "$legacy_panel_template" noctalia-panel-logo-template
   backup_user_file "$palette_template" noctalia-palette-template
-  backup_user_file "$panel_logo" noctalia-panel-logo
+  backup_user_file "$legacy_panel_logo" noctalia-panel-logo
+  backup_user_file "$panel_logo" noctalia-panel-glyph
   backup_user_file "$palette_file" noctalia-live-palette
   backup_user_file "$USER_BIN_DIR/kaleidash-render-logo" render-logo-helper
 
@@ -189,6 +191,7 @@ install_user_identity() {
       "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
   fi
   install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-panel.svg" "$panel_logo"
+  rm -f -- "$legacy_panel_template" "$legacy_panel_logo"
   if [[ ! -f "$palette_file" ]]; then
     install -m 0644 "$SCRIPT_DIR/assets/kaleidash-palette.toml" "$palette_file"
   fi
@@ -208,7 +211,6 @@ PY
   install -m 0644 "$generated" "$noctalia_config"
   rm -f -- "$generated"
   install -m 0644 "$SCRIPT_DIR/assets/kaleidash-mark-dynamic.svg.in" "$noctalia_template"
-  install -m 0644 "$SCRIPT_DIR/assets/kaleidash-mark-panel.svg.in" "$panel_template"
   install -m 0644 "$SCRIPT_DIR/assets/kaleidash-palette.toml.in" "$palette_template"
   install -m 0755 "$SCRIPT_DIR/user/kaleidash-render-logo" "$USER_BIN_DIR/kaleidash-render-logo"
 

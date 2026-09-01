@@ -4,12 +4,6 @@ output_path = "$XDG_DATA_HOME/kaleidash-os/palette.toml"
 index = -20
 hook_async = false
 
-[theme.templates.user.kaleidash_panel]
-input_path = "$XDG_CONFIG_HOME/noctalia/templates/kaleidash-mark-panel.svg.in"
-output_path = "$XDG_DATA_HOME/kaleidash-os/kaleidash-mark-panel.svg"
-index = -10
-hook_async = false
-
 [theme.templates.user.kaleidash_logo]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/kaleidash-mark-dynamic.svg.in"
 output_path = "$XDG_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
@@ -19,4 +13,4 @@ hook_async = false
 
 [widget.control-center]
 custom_image = @KALEIDASH_LOGO_PATH@
-custom_image_colorize = false
+custom_image_colorize = true

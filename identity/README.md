@@ -27,7 +27,7 @@ Run as the normal desktop user from a repository checkout:
 
 The installer requests `sudo` for system-owned files. It installs `plymouth-theme-spinner` and `librsvg2-tools`, creates backups under `/var/lib/kaleidash-os`, and stores user-config backups under `~/.local/state/kaleidash-os`.
 
-After installation, reapply the current Noctalia theme or change the wallpaper once. Noctalia renders the full Kinetic K for Fastfetch and a separate small-size panel mark. The panel mark uses `surface` and `on_surface` for a strong silhouette plus a `primary`/`secondary`/`tertiary` accent.
+After installation, reapply the current Noctalia theme or change the wallpaper once. Noctalia renders the full prismatic Kinetic K for Fastfetch and uses a separate bold monoline K for the panel. The panel glyph is colorized by Noctalia itself, so it always follows the same live widget color as the native panel icons.
 
 The installer selects the Greeter's `Synced` scheme. Its wallpaper continues to come from Noctalia's normal Auto-Sync Greeter feature. The KaleidashOS logo and boot palette use Noctalia's user-template output directly, avoiding the extra delay before the Greeter sync file is updated.
 

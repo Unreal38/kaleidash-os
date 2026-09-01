@@ -139,6 +139,7 @@ restore_user_file "$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-dynamic.s
 restore_user_file "$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-panel.svg.in" noctalia-panel-logo-template
 restore_user_file "$USER_CONFIG_HOME/noctalia/templates/kaleidash-palette.toml.in" noctalia-palette-template
 restore_user_file "$USER_DATA_HOME/kaleidash-os/kaleidash-mark-panel.svg" noctalia-panel-logo
+restore_user_file "$USER_DATA_HOME/kaleidash-os/kaleidash-panel-glyph.svg" noctalia-panel-glyph
 restore_user_file "$USER_DATA_HOME/kaleidash-os/palette.toml" noctalia-live-palette
 restore_user_file "$HOME/.local/bin/kaleidash-render-logo" render-logo-helper
 rm -f -- \
