@@ -47,6 +47,8 @@ This renders a 220 px K above the spinner, applies the current `surface`, `surfa
 
 The installer makes the GRUB menu visible for two seconds so the identity is actually shown. Uninstalling restores the original GRUB defaults and `grubenv`, including Fedora's previous auto-hide behavior.
 
+The GRUB entry intentionally appears as `KaleidashOS` because the installer sets `GRUB_DISTRIBUTOR` to the branded name. The underlying Fedora release and variant remain recorded from `/usr/lib/os-release` by the inventory collector.
+
 After a Fedora major-version upgrade, rerun `./identity/install.sh` so the KaleidashOS version fields are refreshed from Fedora's new `/usr/lib/os-release`.
 
 ## Restore Fedora branding

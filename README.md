@@ -19,10 +19,10 @@ This repository is in its initial identity and inventory phase. It will grow int
 - `brand/` - KaleidashOS identity and vector logo assets
 - `fastfetch/` - example Fastfetch identity and graphical-logo configuration
 - `identity/` - reversible local branding for metadata, desktop, terminal, greeter, GRUB, and Plymouth
+- `inventory/` - privacy-conscious capture of packages, repositories, services, and component versions
 
 ## Planned structure
 
-- Package, Flatpak, and repository inventories
 - Niri and Noctalia configuration
 - Terminal, Yazi, GTK, Qt, KDE, and Firefox theming
 - Wallpaper-palette propagation
@@ -31,4 +31,4 @@ This repository is in its initial identity and inventory phase. It will grow int
 
 ## Status
 
-Early development. The current milestone is to document and package an existing working Fedora 44 desktop before automating a clean installation.
+Early development. Identity is operational and the inventory collector is ready to capture the existing Fedora 44 desktop. The generated lists still require classification into a portable base and optional hardware profiles before they become installer inputs.
