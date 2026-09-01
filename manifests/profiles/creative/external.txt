@@ -1,0 +1,2 @@
+# PureRef was recorded as an externally installed RPM.
+PureRef

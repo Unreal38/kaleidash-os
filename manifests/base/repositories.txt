@@ -1,0 +1,8 @@
+copr:copr.fedorainfracloud.org:celestelove:app2unit
+copr:copr.fedorainfracloud.org:celestelove:libcava
+copr:copr.fedorainfracloud.org:errornointernet:quickshell
+copr:copr.fedorainfracloud.org:leloubil:wl-clip-persist
+fedora-cisco-openh264
+rpmfusion-free
+rpmfusion-free-updates
+terra

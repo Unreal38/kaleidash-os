@@ -169,7 +169,15 @@ sort -u -o "$staging_dir/repositories/flatpak-remotes.tsv" \
 
 log "Reading enabled systemd units"
 systemctl list-unit-files --state=enabled --no-legend --no-pager \
-  | awk 'NF { print $1 }' \
+  | awk '
+      NF {
+        unit = $1
+        if (unit ~ /^actions\.runner\./) {
+          unit = "actions.runner.<redacted>.service"
+        }
+        print unit
+      }
+    ' \
   | sort -u > "$staging_dir/services/system-enabled.txt"
 
 if systemctl --user list-unit-files --state=enabled --no-legend --no-pager \

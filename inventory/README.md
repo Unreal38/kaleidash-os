@@ -39,7 +39,7 @@ The collector deliberately does not read or copy:
 - complete DNF `.repo` files
 - monitor layouts or other hardware configuration
 
-Flatpak URLs are sanitized before writing. The collector also scans its staged outputs for home paths, embedded URL credentials, private-key headers, and common credential parameters. If a suspicious value is found, it aborts before replacing the repository inventory.
+Flatpak URLs are sanitized before writing, and workstation-specific GitHub Actions runner unit names are replaced with `actions.runner.<redacted>.service`. The collector also scans its staged outputs for home paths, embedded URL credentials, private-key headers, and common credential parameters. If a suspicious value is found, it aborts before replacing the repository inventory.
 
 ## Review before committing
 
@@ -52,4 +52,4 @@ These lists describe the current machine, not yet the final portable base. Revie
 - GPU, cooling, controller, printer, and streaming packages
 - third-party repositories that should require explicit opt-in
 
-The next milestone will classify the reviewed inventory into the KaleidashOS base and optional profiles.
+The reviewed portable subset now lives in `manifests/`. Raw inventory remains evidence of the source machine and must not be used directly as an installer input.

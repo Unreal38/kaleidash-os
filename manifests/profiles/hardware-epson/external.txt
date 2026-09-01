@@ -1,0 +1,2 @@
+# Epson EcoTank vendor utility; verify the current vendor download before automating.
+epson-printer-utility

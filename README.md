@@ -20,6 +20,7 @@ This repository is in its initial identity and inventory phase. It will grow int
 - `fastfetch/` - example Fastfetch identity and graphical-logo configuration
 - `identity/` - reversible local branding for metadata, desktop, terminal, greeter, GRUB, and Plymouth
 - `inventory/` - privacy-conscious capture of packages, repositories, services, and component versions
+- `manifests/` - reviewed portable base and opt-in software/hardware profiles
 
 ## Planned structure
 
@@ -31,4 +32,4 @@ This repository is in its initial identity and inventory phase. It will grow int
 
 ## Status
 
-Early development. Identity is operational and the inventory collector is ready to capture the existing Fedora 44 desktop. The generated lists still require classification into a portable base and optional hardware profiles before they become installer inputs.
+Early development. Identity and inventory capture are operational. The first reviewed package split now defines a Fedora KDE substrate, a portable KaleidashOS desktop base, and optional profiles. The manifests remain review inputs until the bootstrap installer is implemented.

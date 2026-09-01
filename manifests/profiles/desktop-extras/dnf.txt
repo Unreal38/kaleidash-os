@@ -1,0 +1,6 @@
+cmatrix
+gnome-network-displays
+lshw
+nvtop
+pavucontrol
+plasma-smart-video-wallpaper-reborn

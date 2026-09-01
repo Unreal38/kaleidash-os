@@ -1,0 +1,3 @@
+greetd.service
+kaleidash-greeter-brand.path
+kaleidash-theme-sync.path
