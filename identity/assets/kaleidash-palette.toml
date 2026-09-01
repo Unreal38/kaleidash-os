@@ -1,0 +1,8 @@
+[palette]
+primary = "#7138f4"
+secondary = "#f31cad"
+tertiary = "#ff775c"
+surface = "#101014"
+surface_variant = "#17171d"
+on_surface = "#f5f2ff"
+outline = "#484851"

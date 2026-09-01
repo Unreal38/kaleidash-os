@@ -1,7 +1,20 @@
+[theme.templates.user.kaleidash_palette]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/kaleidash-palette.toml.in"
+output_path = "$XDG_DATA_HOME/kaleidash-os/palette.toml"
+index = -20
+hook_async = false
+
+[theme.templates.user.kaleidash_panel]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/kaleidash-mark-panel.svg.in"
+output_path = "$XDG_DATA_HOME/kaleidash-os/kaleidash-mark-panel.svg"
+index = -10
+hook_async = false
+
 [theme.templates.user.kaleidash_logo]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/kaleidash-mark-dynamic.svg.in"
 output_path = "$XDG_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
 post_hook = "$HOME/.local/bin/kaleidash-render-logo"
+index = 0
 hook_async = false
 
 [widget.control-center]

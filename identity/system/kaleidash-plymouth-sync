@@ -6,17 +6,37 @@ readonly THEME_FILE="$THEME_DIR/kaleidash.plymouth"
 readonly SYNC_CONFIG="/var/lib/noctalia-greeter/sync.toml"
 readonly FALLBACK_LOGO="/usr/local/share/kaleidash-os/kaleidash-mark.svg"
 readonly DYNAMIC_TEMPLATE="/usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in"
+readonly PALETTE_FILE="${KALEIDASH_USER_PALETTE:-$SYNC_CONFIG}"
+readonly DIGEST_FILE="/var/lib/kaleidash-os/plymouth-theme.sha256"
 
-logo_source="${1:-$FALLBACK_LOGO}"
+force=1
+if [[ "${1:-}" == "--if-changed" ]]; then
+  force=0
+  shift
+fi
+
+logo_source="${1:-${KALEIDASH_USER_LOGO:-$FALLBACK_LOGO}}"
 [[ -f "$logo_source" ]] || logo_source="$FALLBACK_LOGO"
 [[ -f "$logo_source" ]] || exit 1
 [[ -f "$THEME_FILE" ]] || exit 1
+
+digest="$({
+  printf '%s\n' 'kaleidash-plymouth-sync-v2'
+  sha256sum "$0" "$DYNAMIC_TEMPLATE" "$logo_source"
+  if [[ -f "$PALETTE_FILE" ]]; then
+    sha256sum "$PALETTE_FILE"
+  fi
+} | sha256sum | cut -d ' ' -f 1)"
+
+if [[ $force -eq 0 && -f "$DIGEST_FILE" && "$(cat "$DIGEST_FILE")" == "$digest" ]]; then
+  exit 0
+fi
 
 generated_svg="$(mktemp --suffix=.svg)"
 generated_logo="$(mktemp --suffix=.png)"
 trap 'rm -f -- "$generated_svg" "$generated_logo"' EXIT
 
-python3 - "$DYNAMIC_TEMPLATE" "$logo_source" "$SYNC_CONFIG" "$generated_svg" <<'PY'
+python3 - "$DYNAMIC_TEMPLATE" "$logo_source" "$PALETTE_FILE" "$generated_svg" <<'PY'
 import re
 import sys
 import tomllib
@@ -26,7 +46,8 @@ template_path, fallback_path, sync_path, output_path = map(Path, sys.argv[1:])
 palette = {}
 try:
     with sync_path.open("rb") as stream:
-        palette = tomllib.load(stream).get("appearance", {}).get("palette", {})
+        data = tomllib.load(stream)
+        palette = data.get("palette", data.get("appearance", {}).get("palette", {}))
 except (FileNotFoundError, OSError, tomllib.TOMLDecodeError):
     pass
 
@@ -53,7 +74,7 @@ PY
 rsvg-convert --width 220 --height 220 "$generated_svg" --output "$generated_logo"
 install -m 0644 "$generated_logo" "$THEME_DIR/watermark.png"
 
-python3 - "$THEME_FILE" "$SYNC_CONFIG" <<'PY'
+python3 - "$THEME_FILE" "$PALETTE_FILE" <<'PY'
 import re
 import sys
 import tomllib
@@ -63,7 +84,8 @@ theme_path, sync_path = map(Path, sys.argv[1:])
 palette = {}
 try:
     with sync_path.open("rb") as stream:
-        palette = tomllib.load(stream).get("appearance", {}).get("palette", {})
+        data = tomllib.load(stream)
+        palette = data.get("palette", data.get("appearance", {}).get("palette", {}))
 except (FileNotFoundError, OSError, tomllib.TOMLDecodeError):
     pass
 
@@ -119,3 +141,5 @@ theme_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 PY
 
 plymouth-set-default-theme kaleidash -R
+install -D -m 0644 /dev/null "$DIGEST_FILE"
+printf '%s\n' "$digest" > "$DIGEST_FILE"

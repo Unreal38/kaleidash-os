@@ -81,6 +81,8 @@ restore_user_file() {
 }
 
 log "Restoring Fedora system identity"
+sudo systemctl disable --now kaleidash-theme-sync.path >/dev/null 2>&1 || true
+sudo systemctl stop kaleidash-theme-sync.service >/dev/null 2>&1 || true
 sudo systemctl disable --now kaleidash-greeter-brand.service >/dev/null 2>&1 || true
 sudo systemctl disable --now kaleidash-greeter-brand.path >/dev/null 2>&1 || true
 restore_system_file /etc/os-release os-release
@@ -115,8 +117,14 @@ sudo rm -f -- \
   /usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in \
   /usr/local/libexec/kaleidash-greeter-brand \
   /usr/local/libexec/kaleidash-plymouth-sync \
+  /usr/local/libexec/kaleidash-theme-sync \
   /etc/systemd/system/kaleidash-greeter-brand.service \
-  /etc/systemd/system/kaleidash-greeter-brand.path
+  /etc/systemd/system/kaleidash-greeter-brand.path \
+  /etc/systemd/system/kaleidash-theme-sync.service \
+  /etc/systemd/system/kaleidash-theme-sync.path \
+  /etc/kaleidash-os/identity.env \
+  "$SYSTEM_STATE_DIR/plymouth-theme.sha256"
+sudo rmdir -- /etc/kaleidash-os 2>/dev/null || true
 sudo systemctl daemon-reload
 sudo rm -rf -- "$GRUB_THEME_DIR" "$PLYMOUTH_THEME_DIR"
 
@@ -128,6 +136,10 @@ log "Restoring user configuration"
 restore_user_file "$USER_CONFIG_HOME/fish/functions/fastfetch.fish" fish-fastfetch
 restore_user_file "$USER_CONFIG_HOME/noctalia/kaleidash-identity.toml" noctalia-identity-config
 restore_user_file "$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-dynamic.svg.in" noctalia-logo-template
+restore_user_file "$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-panel.svg.in" noctalia-panel-logo-template
+restore_user_file "$USER_CONFIG_HOME/noctalia/templates/kaleidash-palette.toml.in" noctalia-palette-template
+restore_user_file "$USER_DATA_HOME/kaleidash-os/kaleidash-mark-panel.svg" noctalia-panel-logo
+restore_user_file "$USER_DATA_HOME/kaleidash-os/palette.toml" noctalia-live-palette
 restore_user_file "$HOME/.local/bin/kaleidash-render-logo" render-logo-helper
 rm -f -- \
   "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg" \

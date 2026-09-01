@@ -3,6 +3,7 @@ set -Eeuo pipefail
 
 readonly USER_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 readonly DYNAMIC_LOGO="$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
+readonly LIVE_PALETTE="$USER_DATA_HOME/kaleidash-os/palette.toml"
 readonly SYNC_HELPER="/usr/local/libexec/kaleidash-plymouth-sync"
 
 if [[ $EUID -eq 0 ]]; then
@@ -15,5 +16,8 @@ if [[ ! -x "$SYNC_HELPER" ]]; then
   exit 1
 fi
 
-sudo "$SYNC_HELPER" "$DYNAMIC_LOGO"
-printf 'KaleidashOS: the current Noctalia palette will be used on the next boot.\n'
+sudo env \
+  KALEIDASH_USER_PALETTE="$LIVE_PALETTE" \
+  KALEIDASH_USER_LOGO="$DYNAMIC_LOGO" \
+  "$SYNC_HELPER" "$DYNAMIC_LOGO"
+printf 'KaleidashOS: forced a refresh of the palette used on the next boot.\n'

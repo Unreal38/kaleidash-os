@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+readonly LOCK_FILE="/run/kaleidash-theme-sync.lock"
+readonly GREETER_HELPER="/usr/local/libexec/kaleidash-greeter-brand"
+readonly PLYMOUTH_HELPER="/usr/local/libexec/kaleidash-plymouth-sync"
+
+exec 9>"$LOCK_FILE"
+flock 9
+
+if [[ -x "$GREETER_HELPER" ]]; then
+  "$GREETER_HELPER"
+fi
+if [[ -x "$PLYMOUTH_HELPER" ]]; then
+  "$PLYMOUTH_HELPER" --if-changed
+fi

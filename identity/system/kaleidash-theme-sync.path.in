@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch the live Noctalia palette for KaleidashOS system branding
+
+[Path]
+PathChanged=@KALEIDASH_PALETTE_PATH@
+Unit=kaleidash-theme-sync.service
+
+[Install]
+WantedBy=multi-user.target

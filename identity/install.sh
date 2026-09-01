@@ -158,6 +158,10 @@ install_user_identity() {
   local fish_function="$USER_CONFIG_HOME/fish/functions/fastfetch.fish"
   local noctalia_config="$USER_CONFIG_HOME/noctalia/kaleidash-identity.toml"
   local noctalia_template="$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-dynamic.svg.in"
+  local panel_template="$USER_CONFIG_HOME/noctalia/templates/kaleidash-mark-panel.svg.in"
+  local palette_template="$USER_CONFIG_HOME/noctalia/templates/kaleidash-palette.toml.in"
+  local panel_logo="$USER_DATA_HOME/kaleidash-os/kaleidash-mark-panel.svg"
+  local palette_file="$USER_DATA_HOME/kaleidash-os/palette.toml"
   local generated
 
   log "Installing wallpaper-reactive terminal identity"
@@ -170,6 +174,10 @@ install_user_identity() {
   backup_user_file "$fish_function" fish-fastfetch
   backup_user_file "$noctalia_config" noctalia-identity-config
   backup_user_file "$noctalia_template" noctalia-logo-template
+  backup_user_file "$panel_template" noctalia-panel-logo-template
+  backup_user_file "$palette_template" noctalia-palette-template
+  backup_user_file "$panel_logo" noctalia-panel-logo
+  backup_user_file "$palette_file" noctalia-live-palette
   backup_user_file "$USER_BIN_DIR/kaleidash-render-logo" render-logo-helper
 
   if [[ ! -f "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.png" ]]; then
@@ -180,10 +188,14 @@ install_user_identity() {
     install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-compact.svg" \
       "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
   fi
+  install -m 0644 "$REPO_ROOT/brand/logo/kaleidash-mark-panel.svg" "$panel_logo"
+  if [[ ! -f "$palette_file" ]]; then
+    install -m 0644 "$SCRIPT_DIR/assets/kaleidash-palette.toml" "$palette_file"
+  fi
   install -m 0644 "$SCRIPT_DIR/user/fastfetch.fish" "$fish_function"
   generated="$(mktemp)"
   python3 - "$SCRIPT_DIR/noctalia/kaleidash-identity.toml" "$generated" \
-    "$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg" <<'PY'
+    "$panel_logo" <<'PY'
 import json
 import sys
 from pathlib import Path
@@ -196,6 +208,8 @@ PY
   install -m 0644 "$generated" "$noctalia_config"
   rm -f -- "$generated"
   install -m 0644 "$SCRIPT_DIR/assets/kaleidash-mark-dynamic.svg.in" "$noctalia_template"
+  install -m 0644 "$SCRIPT_DIR/assets/kaleidash-mark-panel.svg.in" "$panel_template"
+  install -m 0644 "$SCRIPT_DIR/assets/kaleidash-palette.toml.in" "$palette_template"
   install -m 0755 "$SCRIPT_DIR/user/kaleidash-render-logo" "$USER_BIN_DIR/kaleidash-render-logo"
 
   if command -v noctalia >/dev/null 2>&1; then
@@ -203,6 +217,51 @@ PY
       warn "Noctalia reported a configuration error. Run 'noctalia config validate' for details."
     fi
   fi
+}
+
+install_live_theme_sync() {
+  local palette_file="$USER_DATA_HOME/kaleidash-os/palette.toml"
+  local logo_file="$USER_DATA_HOME/kaleidash-os/kaleidash-mark.svg"
+  local generated_env
+  local generated_path
+
+  log "Connecting the live Noctalia palette to system branding"
+  generated_env="$(mktemp)"
+  generated_path="$(mktemp)"
+
+  python3 - "$generated_env" "$generated_path" \
+    "$SCRIPT_DIR/system/kaleidash-theme-sync.path.in" "$palette_file" "$logo_file" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+env_output, path_output, path_template, palette_path, logo_path = sys.argv[1:]
+Path(env_output).write_text(
+    f"KALEIDASH_USER_PALETTE={json.dumps(palette_path)}\n"
+    f"KALEIDASH_USER_LOGO={json.dumps(logo_path)}\n",
+    encoding="utf-8",
+)
+unit = Path(path_template).read_text(encoding="utf-8")
+escaped_path = "".join(
+    character if character.isalnum() or character in "/._-" else f"\\x{ord(character):02x}"
+    for character in palette_path
+)
+unit = unit.replace("@KALEIDASH_PALETTE_PATH@", escaped_path)
+Path(path_output).write_text(unit, encoding="utf-8")
+PY
+
+  sudo install -D -m 0644 "$generated_env" /etc/kaleidash-os/identity.env
+  sudo install -D -m 0755 "$SCRIPT_DIR/system/kaleidash-theme-sync" \
+    /usr/local/libexec/kaleidash-theme-sync
+  sudo install -D -m 0644 "$SCRIPT_DIR/system/kaleidash-theme-sync.service" \
+    /etc/systemd/system/kaleidash-theme-sync.service
+  sudo install -D -m 0644 "$generated_path" \
+    /etc/systemd/system/kaleidash-theme-sync.path
+  rm -f -- "$generated_env" "$generated_path"
+
+  sudo systemctl daemon-reload
+  sudo systemctl enable --now kaleidash-theme-sync.path >/dev/null
+  sudo systemctl start kaleidash-theme-sync.service
 }
 
 set_toml_boolean() {
@@ -450,6 +509,7 @@ install_desktop_identity
 install_user_identity
 install_greeter_identity
 install_plymouth_identity
+install_live_theme_sync
 install_grub_identity
 
 log "Identity installation complete"
@@ -457,6 +517,6 @@ printf '\n'
 printf 'Visible immediately: Fastfetch, hostnamectl, system information, and application launcher identity.\n'
 printf 'Visible after the next wallpaper/theme application: wallpaper-colored Fastfetch logo.\n'
 printf 'Visible after reboot or logout: GRUB, palette-colored Plymouth, and the synced KaleidashOS Noctalia Greeter.\n'
-printf 'After a later wallpaper change, update the next boot with: %s/identity/sync-boot-theme.sh\n' "$REPO_ROOT"
+printf 'Later wallpaper changes automatically update the Greeter and the next boot splash.\n'
 printf '\n'
 printf 'Reboot when convenient. Restore Fedora branding with: %s/identity/uninstall.sh\n' "$REPO_ROOT"

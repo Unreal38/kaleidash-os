@@ -5,6 +5,7 @@ ConditionPathExists=/usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in
 
 [Service]
 Type=oneshot
+EnvironmentFile=-/etc/kaleidash-os/identity.env
 ExecStart=/usr/local/libexec/kaleidash-greeter-brand
 
 [Install]

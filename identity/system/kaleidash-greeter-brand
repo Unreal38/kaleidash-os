@@ -4,13 +4,14 @@ set -euo pipefail
 readonly TEMPLATE="/usr/local/share/kaleidash-os/kaleidash-mark-dynamic.svg.in"
 readonly FALLBACK="/usr/local/share/kaleidash-os/kaleidash-mark.svg"
 readonly SYNC_CONFIG="/var/lib/noctalia-greeter/sync.toml"
+readonly PALETTE_FILE="${KALEIDASH_USER_PALETTE:-$SYNC_CONFIG}"
 
 [[ -f "$TEMPLATE" ]] || exit 0
 
 generated="$(mktemp)"
 trap 'rm -f -- "$generated"' EXIT
 
-python3 - "$TEMPLATE" "$FALLBACK" "$SYNC_CONFIG" "$generated" <<'PY'
+python3 - "$TEMPLATE" "$FALLBACK" "$PALETTE_FILE" "$generated" <<'PY'
 import re
 import sys
 import tomllib
@@ -21,7 +22,8 @@ palette = {}
 
 try:
     with sync_path.open("rb") as stream:
-        palette = tomllib.load(stream).get("appearance", {}).get("palette", {})
+        data = tomllib.load(stream)
+        palette = data.get("palette", data.get("appearance", {}).get("palette", {}))
 except (FileNotFoundError, OSError, tomllib.TOMLDecodeError):
     pass
 

@@ -1,0 +1,10 @@
+[Unit]
+Description=Apply the current Noctalia palette to KaleidashOS system branding
+After=local-fs.target
+ConditionPathExists=/etc/kaleidash-os/identity.env
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/kaleidash-os/identity.env
+ExecStart=/usr/local/libexec/kaleidash-theme-sync
+TimeoutStartSec=180
