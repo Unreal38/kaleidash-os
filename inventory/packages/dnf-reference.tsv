@@ -1,0 +1,728 @@
+GConf2\t3.2.6-49.fc44\tx86_64\tUser\t<unknown>
+ImageMagick-devel\t1:7.1.2.27-1.fc44\tx86_64\tUser\tupdates
+ModemManager\t1.24.2-3.fc44\tx86_64\tGroup\t<unknown>
+NetworkManager-adsl\t1:1.56.1-2.fc44\tx86_64\tGroup\tupdates
+NetworkManager-bluetooth\t1:1.56.1-2.fc44\tx86_64\tGroup\tupdates
+NetworkManager-config-connectivity-fedora\t1:1.56.1-2.fc44\tnoarch\tGroup\tupdates
+NetworkManager-ppp\t1:1.56.1-2.fc44\tx86_64\tGroup\tupdates
+NetworkManager-wifi\t1:1.56.1-2.fc44\tx86_64\tGroup\tupdates
+NetworkManager-wwan\t1:1.56.1-2.fc44\tx86_64\tGroup\tupdates
+NetworkManager\t1:1.56.1-2.fc44\tx86_64\tGroup\tupdates
+PackageKit-command-not-found\t1.3.6-1.fc44\tx86_64\tGroup\tupdates
+PackageKit-gstreamer-plugin\t1.3.6-1.fc44\tx86_64\tGroup\tupdates
+PureRef\t2.1.1-1\tx86_64\tExternal User\t<unknown>
+R-srpm-macros\t1.3.7-2.fc44\tnoarch\tExternal User\tupdates
+SFML\t2.6.2-10.fc44\tx86_64\tExternal User\t<unknown>
+Thunar\t4.20.9-1.fc44\tx86_64\tUser\tupdates
+aajohan-comfortaa-fonts\t3.105-0.9.20210729git2a87ac6.fc44\tnoarch\tUser\t<unknown>
+abrt-cli\t2.17.9-1.fc44\tx86_64\tGroup\tupdates
+abrt-desktop\t2.17.9-1.fc44\tx86_64\tGroup\tupdates
+abseil-cpp\t20260107.1-1.fc44\ti686\tExternal User\t<unknown>
+accountsservice-libs\t23.13.9-16.fc44\tx86_64\tExternal User\t<unknown>
+acl\t2.4.0-1.fc44\tx86_64\tGroup\tupdates
+adw-gtk3-theme\t6.4-3.fc44\tnoarch\tUser\tfedora
+alsa-lib-devel\t1.2.16.1-1.fc44\tx86_64\tUser\tupdates
+alsa-sof-firmware\t2025.12.2-1.fc44\tnoarch\tGroup\t<unknown>
+alsa-ucm\t1.2.16.1-1.fc44\tnoarch\tGroup\tupdates
+alsa-utils\t1.2.16-1.fc44\tx86_64\tGroup\tupdates
+amd-gpu-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+amd-ucode-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+anaconda-install-env-deps\t44.30-2.fc44\tx86_64\tUser\t<unknown>
+anaconda-live\t44.30-2.fc44\tnoarch\tUser\t<unknown>
+app2unit\t1.4.0-1.fc44\tnoarch\tUser\tcopr:copr.fedorainfracloud.org:celestelove:app2unit
+ark\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+at-spi2-atk\t2.60.6-1.fc44\ti686\tGroup\tupdates
+at-spi2-atk\t2.60.6-1.fc44\tx86_64\tGroup\tupdates
+at-spi2-core\t2.60.6-1.fc44\ti686\tGroup\tupdates
+at-spi2-core\t2.60.6-1.fc44\tx86_64\tGroup\tupdates
+at\t3.2.5-21.fc44\tx86_64\tGroup\t<unknown>
+atheros-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+attr\t2.6.0-1.fc44\tx86_64\tGroup\tupdates
+aubio-devel\t0.4.9-32.fc44\tx86_64\tUser\tfedora
+aubio\t0.4.9-32.fc44\tx86_64\tUser\tfedora
+audacity\t3.7.8-1.fc44\tx86_64\tUser\tupdates
+audiocd-kio\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+audiofile-devel\t1:0.3.6-44.fc44\tx86_64\tUser\tfedora
+audit\t4.2.1-1.fc44\tx86_64\tGroup\tupdates
+aurorae\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+authselect\t1.7.1-1.fc44\tx86_64\tGroup\t<unknown>
+b43-fwcutter\t020-1.fc44\tx86_64\tGroup\tupdates
+b43-openfwwf\t5.2-48.fc44\tnoarch\tGroup\t<unknown>
+bash-color-prompt\t0.7.1-3.fc44\tnoarch\tGroup\t<unknown>
+bash-completion\t1:2.17-2.fc44\tnoarch\tGroup\t<unknown>
+bash\t5.3.9-3.fc44\tx86_64\tGroup\t<unknown>
+bc\t1.08.2-4.fc44\tx86_64\tGroup\t<unknown>
+bind-utils\t32:9.18.50-2.fc44\tx86_64\tGroup\tupdates
+bison\t3.8.2-15.fc44\tx86_64\tUser\tfedora
+bluedevil\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+bluez-cups\t5.87-6.fc44\tx86_64\tGroup\tupdates
+boost-charconv\t1.90.0-7.fc44\tx86_64\tExternal User\t<unknown>
+boost-cobalt\t1.90.0-7.fc44\tx86_64\tExternal User\t<unknown>
+boost-devel\t1.90.0-7.fc44\tx86_64\tUser\t<unknown>
+boost-process\t1.90.0-7.fc44\tx86_64\tExternal User\t<unknown>
+boost-url\t1.90.0-7.fc44\tx86_64\tExternal User\t<unknown>
+botan3\t3.9.0-7.fc44\tx86_64\tExternal User\t<unknown>
+brcmfmac-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+breeze-icon-theme\t6.29.0-1.fc44\tnoarch\tGroup\tupdates
+brltty\t6.8-8.fc44\tx86_64\tGroup\t<unknown>
+btop\t1.4.7-1.fc44\tx86_64\tUser\tupdates
+btrfs-progs\t7.1-1.fc44\tx86_64\tGroup\tupdates
+bzip2\t1.0.8-23.fc44\tx86_64\tGroup\t<unknown>
+cairo-devel\t1.18.4-6.fc44\tx86_64\tUser\t<unknown>
+cairo-gobject-devel\t1.18.4-6.fc44\tx86_64\tUser\t<unknown>
+cairomm1.16\t1.18.0-16.fc44\tx86_64\tExternal User\t<unknown>
+cargo\t1.98.0-1.fc44\tx86_64\tUser\tupdates
+ccache\t4.12.3-1.fc44\tx86_64\tUser\tfedora
+cdparanoia-libs\t10.2-50.fc44\ti686\tExternal User\t<unknown>
+chafa\t1.18.2-1.fc44\tx86_64\tUser\tupdates
+chrony\t4.9-1.fc44\tx86_64\tGroup\tupdates
+cifs-utils\t7.7-1.fc44\tx86_64\tGroup\tupdates
+cirrus-audio-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+clang\t22.1.8-4.fc44\tx86_64\tUser\tupdates
+cliphist\t0.7.0-1.fc44\tx86_64\tUser\tfedora
+cmake-srpm-macros\t4.3.0-1.fc44\tnoarch\tExternal User\t<unknown>
+cmake\t4.3.0-1.fc44\tx86_64\tUser\t<unknown>
+cmatrix\t2.0-14.fc44\tx86_64\tUser\tfedora
+cockpit-networkmanager\t366-1.fc44\tnoarch\tExternal User\tupdates
+colord-kde\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+colord\t1.4.8-4.fc44\tx86_64\tGroup\t<unknown>
+compsize\t1.5^git20250123.d79eacf-15.fc44\tx86_64\tGroup\t<unknown>
+coreutils\t9.10-5.fc44\tx86_64\tGroup\tupdates
+cpio\t2.15-9.fc44\tx86_64\tGroup\t<unknown>
+createrepo_c\t1.2.1-5.fc44\tx86_64\tUser\tfedora
+crontabs\t1.11^20190603git9e74f2d-10.fc44\tnoarch\tGroup\t<unknown>
+cryptsetup\t2.8.7-1.fc44\tx86_64\tGroup\tupdates
+cups-browsed\t1:2.1.1-7.fc44\tx86_64\tGroup\t<unknown>
+cups-devel\t1:2.4.19-3.fc44\tx86_64\tUser\tupdates
+cups-filters\t1:2.0.1-14.fc44\tx86_64\tGroup\t<unknown>
+cups-pk-helper\t0.2.7-12.fc44\tx86_64\tGroup\t<unknown>
+cups\t1:2.4.19-3.fc44\tx86_64\tGroup\tupdates
+curl\t8.18.0-9.fc44\tx86_64\tGroup\tupdates
+cyrus-sasl-plain\t2.1.28-35.fc44\tx86_64\tGroup\t<unknown>
+dbus-glib-devel\t0.112-13.fc44\tx86_64\tUser\tfedora
+dbus\t1:1.16.2-1.fc44\tx86_64\tGroup\t<unknown>
+default-editor\t8.7.1-2.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-cjk-mono\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-cjk-sans\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-cjk-serif\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-core-emoji\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-core-math\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-core-mono\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-core-sans\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-core-serif\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-ii\t4.3-1.fc44\tnoarch\tExternal User\t<unknown>
+default-fonts-other-mono\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-other-sans\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+default-fonts-other-serif\t4.3-1.fc44\tnoarch\tGroup\t<unknown>
+deltarpm\t3.6.5-8.fc44\tx86_64\tGroup\t<unknown>
+dhcp-client\t12:4.4.3-26.fc44\tx86_64\tGroup\t<unknown>
+discord\t1.0.156-1.fc44\tx86_64\tUser\tterra
+dnf5-plugins\t5.4.3.0-2.fc44\tx86_64\tGroup\tupdates
+dnf5\t5.4.3.0-2.fc44\tx86_64\tUser\tupdates
+dnsmasq\t2.92rel2-9.fc44\tx86_64\tGroup\tupdates
+dolphin-emu-data\t2503a-15.fc44\tnoarch\tExternal User\tupdates
+dolphin-emu\t2503a-15.fc44\tx86_64\tExternal User\tupdates
+dos2unix\t7.5.6-1.fc44\tx86_64\tGroup\tupdates
+dosfstools\t4.2-18.fc44\tx86_64\tGroup\t<unknown>
+dotnet-sdk-8.0\t8.0.130-1.fc44\tx86_64\tUser\tupdates
+dracut-config-rescue\t108-7.fc44\tx86_64\tGroup\tupdates
+dracut-live\t108-7.fc44\tx86_64\tUser\tupdates
+dracut-network\t108-7.fc44\tx86_64\tGroup\tupdates
+dragon\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+e2fsprogs\t1.47.3-4.fc44\tx86_64\tGroup\t<unknown>
+ed\t1.22.5-2.fc44\tx86_64\tGroup\t<unknown>
+efibootmgr\t18-11.fc44\tx86_64\tGroup\t<unknown>
+elisa-player\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+emacs-filesystem\t1:30.2-2.fc44\tx86_64\tExternal User\t<unknown>
+enet\t1.3.18-5.fc44\tx86_64\tExternal User\t<unknown>
+epson-printer-utility\t1.2.2-1\tx86_64\tExternal User\t<unknown>
+ethtool\t2:7.1-1.fc44\tx86_64\tGroup\tupdates
+evtest\t1.36-2.fc44\tx86_64\tUser\tfedora
+execstack\t0.5.0-32.fc44\tx86_64\tExternal User\t<unknown>
+exfatprogs\t1.4.3-1.fc44\tx86_64\tGroup\tupdates
+extra-cmake-modules\t6.29.0-1.fc44\tnoarch\tUser\tupdates
+eza\t0.23.5-1.fc44\tx86_64\tUser\tupdates
+f44-backgrounds-base\t44.0.0-1.fc44\tnoarch\tExternal User\t<unknown>
+f44-backgrounds-kde\t44.0.0-1.fc44\tnoarch\tExternal User\t<unknown>
+fastfetch\t2.66.0-1.fc44\tx86_64\tUser\tupdates
+fedora-bookmarks\t28-36.fc44\tnoarch\tGroup\t<unknown>
+fedora-flathub-remote\t1-12.fc44\tnoarch\tGroup\t<unknown>
+fedora-release-kde-desktop\t44-18\tnoarch\tUser\tupdates
+fedora-workstation-repositories\t38-9.fc44\tx86_64\tGroup\t<unknown>
+ffmpeg\t8.1.2-3.fc44\tx86_64\tUser\trpmfusion-free-updates
+ffmpegthumbs\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+file\t5.46-10.fc44\tx86_64\tGroup\t<unknown>
+filelight\t1:26.08.0-1.fc44\tx86_64\tGroup\tupdates
+filesystem\t3.18-52.fc44\tx86_64\tUser\t<unknown>
+firefox\t154.0-5.fc44\tx86_64\tGroup\tupdates
+firewall-config\t2.4.4-1.fc44\tnoarch\tGroup\tupdates
+firewalld\t2.4.4-1.fc44\tnoarch\tGroup\tupdates
+fish\t4.6.0-1.fc44\tx86_64\tUser\t<unknown>
+flatpak-kcm\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+flex\t2.6.4-24.fc44\tx86_64\tUser\tfedora
+fontforge\t20251009-2.fc44\tx86_64\tUser\tfedora
+fonts-rpm-macros\t1:5.0.0-2.fc44\tnoarch\tUser\tfedora
+fonttools\t4.62.1-1.fc44\tx86_64\tUser\tupdates
+fpaste\t0.5.0.0-4.fc44\tnoarch\tGroup\t<unknown>
+fprintd-pam\t1.94.5-5.fc44\tx86_64\tGroup\t<unknown>
+freeglut-devel\t3.8.0-2.fc44\tx86_64\tUser\tfedora
+freetype-devel\t2.14.3-1.fc44\ti686\tUser\tupdates
+fuse\t2.9.9-25.fc44\tx86_64\tUser\t<unknown>
+fwupd\t2.1.7-1.fc44\tx86_64\tGroup\tupdates
+gcc\t16.2.1-2.fc44\tx86_64\tUser\tupdates
+gcm-core\t2.9.1-1.fc44\tx86_64\tUser\tterra
+gd\t2.3.3-21.fc44\ti686\tExternal User\t<unknown>
+ghostscript\t10.06.0-2.fc44\tx86_64\tGroup\t<unknown>
+giflib-devel\t6.1.3-2.fc44\tx86_64\tUser\tupdates
+git\t2.55.0-1.fc44\tx86_64\tUser\tupdates
+glibc-all-langpacks\t2.43-8.fc44\tx86_64\tGroup\tupdates
+glibc-devel\t2.43-8.fc44\ti686\tUser\tupdates
+glibc\t2.43-8.fc44\ti686\tGroup\tupdates
+glibc\t2.43-8.fc44\tx86_64\tGroup\tupdates
+glibmm2.68\t2.88.1-1.fc44\tx86_64\tExternal User\tupdates
+glslang\t16.2.0-1.fc44\tx86_64\tUser\tfedora
+gnome-keyring\t50.0-1.fc44\tx86_64\tUser\tfedora
+gnome-network-displays\t0.97.0-3.fc44\tx86_64\tUser\tfedora
+gnupg2-g13\t2.4.9-16.fc44\tx86_64\tExternal User\tupdates
+gnupg2-scdaemon\t2.4.9-16.fc44\tx86_64\tExternal User\tupdates
+gnupg2-utils\t2.4.9-16.fc44\tx86_64\tExternal User\tupdates
+gnupg2-wks\t2.4.9-16.fc44\tx86_64\tExternal User\tupdates
+gnupg2\t2.4.9-16.fc44\tx86_64\tGroup\tupdates
+go-l2tp\t0.1.8-4.fc44\tx86_64\tExternal User\t<unknown>
+gobject-introspection-devel\t1.86.0-3.fc44\tx86_64\tUser\t<unknown>
+golang-github-jesseduffield-lazygit\t0.64.1-1.fc44\tx86_64\tUser\tterra
+google-noto-sans-cjk-fonts\t1:2.004-11.fc44\tnoarch\tUser\tfedora
+google-noto-sans-yi-fonts\t20251201-2.fc44\tnoarch\tExternal User\t<unknown>
+google-rubik-fonts\t2.100-15.20200314git2e360a2.fc44\tnoarch\tUser\tfedora
+graphene\t1.10.8-4.fc44\ti686\tExternal User\t<unknown>
+greetd\t0.10.3-6.fc44\tx86_64\tUser\tfedora
+grim\t1.5.0-3.fc44\tx86_64\tUser\tfedora
+grub2-efi-ia32-cdboot\t1:2.12-64.fc44\tx86_64\tGroup\tupdates
+grub2-efi-ia32-modules\t1:2.12-64.fc44\tnoarch\tUser\tupdates
+grub2-efi-ia32\t1:2.12-64.fc44\tx86_64\tGroup\tupdates
+grub2-efi-x64-cdboot\t1:2.12-64.fc44\tx86_64\tGroup\tupdates
+grub2-efi-x64-modules\t1:2.12-64.fc44\tnoarch\tUser\tupdates
+grub2-efi-x64\t1:2.12-64.fc44\tx86_64\tGroup\tupdates
+grub2-pc\t1:2.12-64.fc44\tx86_64\tGroup\tupdates
+grub2-tools-efi\t1:2.12-64.fc44\tx86_64\tGroup\tupdates
+grub2-tools-extra\t1:2.12-64.fc44\tx86_64\tGroup\tupdates
+grub2-tools\t1:2.12-64.fc44\tx86_64\tGroup\tupdates
+grubby\t8.40-88.fc44\tx86_64\tUser\t<unknown>
+gsm-devel\t1.0.24-2.fc44\tx86_64\tUser\tfedora
+gstreamer1-devel\t1.28.6-1.fc44\tx86_64\tUser\tupdates
+gstreamer1-plugin-dav1d\t0.15.0-1.fc44\tx86_64\tGroup\t<unknown>
+gstreamer1-plugin-libav\t1.28.6-1.fc44\tx86_64\tGroup\tupdates
+gstreamer1-plugin-openh264\t1.28.6-1.fc44\tx86_64\tGroup\tupdates
+gstreamer1-plugins-bad-free\t1.28.6-1.fc44\tx86_64\tGroup\tupdates
+gstreamer1-plugins-bad-freeworld\t1:1.28.6-1.fc44\tx86_64\tGroup\trpmfusion-free-updates
+gstreamer1-plugins-base-devel\t1.28.6-1.fc44\tx86_64\tUser\tupdates
+gstreamer1-plugins-base\t1.28.6-1.fc44\ti686\tExternal User\tupdates
+gstreamer1-plugins-good\t1.28.6-1.fc44\tx86_64\tGroup\tupdates
+gstreamer1-plugins-ugly-free\t1.28.6-1.fc44\tx86_64\tGroup\tupdates
+gstreamer1-plugins-ugly\t1:1.28.6-1.fc44\tx86_64\tGroup\trpmfusion-free-updates
+gtk3-devel\t3.24.52-2.fc44\tx86_64\tUser\tupdates
+gtk3-immodule-xim\t3.24.52-2.fc44\tx86_64\tGroup\tupdates
+gtkmm4.0\t4.22.0-1.fc44\tx86_64\tExternal User\t<unknown>
+gum\t0.17.0-3.fc44\tx86_64\tUser\tupdates
+gutenprint-cups\t5.3.5-7.fc44\tx86_64\tGroup\t<unknown>
+gutenprint\t5.3.5-7.fc44\tx86_64\tGroup\t<unknown>
+gwenview\t1:26.08.0-1.fc44\tx86_64\tGroup\tupdates
+harfbuzz-gpu\t14.1.0-2.fc44\tx86_64\tExternal User\t<unknown>
+harfbuzz-raster\t14.1.0-2.fc44\tx86_64\tExternal User\t<unknown>
+harfbuzz-vector\t14.1.0-2.fc44\tx86_64\tExternal User\t<unknown>
+hfsplus-tools\t540.1.linux3-36.fc44\tx86_64\tGroup\t<unknown>
+hidapi\t0.15.0-3.fc44\tx86_64\tExternal User\t<unknown>
+hostname\t3.25-4.fc44\tx86_64\tGroup\t<unknown>
+hplip\t3.26.4-7.fc44\tx86_64\tGroup\tupdates
+htop\t3.4.1-3.fc44\tx86_64\tUser\t<unknown>
+hunspell-en-AU\t0.20260225-2.fc44\tnoarch\tExternal User\t<unknown>
+hunspell-en-CA\t0.20260225-2.fc44\tnoarch\tExternal User\t<unknown>
+hunspell\t1.7.3-1.fc44\tx86_64\tGroup\tupdates
+hyperv-daemons\t6.10-3.fc44\tx86_64\tGroup\t<unknown>
+ibus-anthy\t1.5.18-2.fc44\tx86_64\tGroup\tupdates
+ibus-chewing\t2.1.7-2.fc44\tx86_64\tGroup\t<unknown>
+ibus-gtk3\t1.5.34-4.fc44\tx86_64\tGroup\tupdates
+ibus-gtk4\t1.5.34-4.fc44\tx86_64\tGroup\tupdates
+ibus-hangul\t1.5.5-12.fc44\tx86_64\tGroup\t<unknown>
+ibus-libpinyin\t1.16.5-3.fc44\tx86_64\tGroup\t<unknown>
+ibus-m17n\t1.4.39-1.fc44\tx86_64\tGroup\tupdates
+ibus-table-chinese-cangjie\t1.8.14-3.fc44\tnoarch\tGroup\t<unknown>
+ibus-typing-booster\t2.31.0-1.fc44\tnoarch\tGroup\tupdates
+im-chooser\t1.7.6-1.fc44\tx86_64\tGroup\t<unknown>
+imsettings-gsettings\t1.8.11-2.fc44\tx86_64\tGroup\t<unknown>
+imsettings-plasma\t1.8.11-2.fc44\tx86_64\tGroup\t<unknown>
+imsettings\t1.8.11-2.fc44\tx86_64\tGroup\t<unknown>
+initial-setup-gui-wayland-plasma\t44.0-1.fc44\tnoarch\tGroup\tupdates
+initial-setup-gui\t0.3.101-7.fc44\tx86_64\tGroup\t<unknown>
+intel-audio-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+intel-gpu-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+intel-vsc-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+iproute\t6.17.0-2.fc44\tx86_64\tGroup\t<unknown>
+iptables-nft\t1.8.11-13.fc44\tx86_64\tGroup\t<unknown>
+iptstate\t2.3.0-1.fc44\tx86_64\tGroup\tupdates
+iputils\t20250605-2.fc44\tx86_64\tGroup\t<unknown>
+irqbalance\t2:1.9.5-2.fc44\tx86_64\tGroup\t<unknown>
+iscsi-initiator-utils\t6.2.1.11-0.git4b3e853.fc44.3\tx86_64\tGroup\t<unknown>
+isomd5sum\t1:1.2.5-6.fc44\tx86_64\tUser\t<unknown>
+iwlegacy-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+iwlwifi-dvm-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+iwlwifi-mvm-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+jbigkit-libs\t2.1-33.fc44\ti686\tExternal User\t<unknown>
+jitterentropy\t3.7.0-3.fc44\tx86_64\tExternal User\tupdates
+json-devel\t3.12.0-2.fc44\tx86_64\tUser\tfedora
+just\t1.57.0-1.fc44\tx86_64\tUser\tupdates
+kaccounts-integration-qt6\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kaccounts-providers\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kamera\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kamoso\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kbd-legacy\t2.9.0-4.fc44\tnoarch\tGroup\tupdates
+kbd\t2.9.0-4.fc44\tx86_64\tGroup\tupdates
+kcalc\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kcharselect\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kde-connect\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kde-gtk-config\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+kde-inotify-survey\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kde-l10n\t17.08.3-22.fc44\tnoarch\tUser\t<unknown>
+kde-partitionmanager\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kde-settings-pulseaudio\t44.0-1.fc44\tnoarch\tGroup\tupdates
+kdebugsettings\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kdegraphics-thumbnailers\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kdenetwork-filesharing\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kdeplasma-addons\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+kdialog\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kdnssd\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+keditbookmarks\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kernel-core\t7.1.10-200.fc44\tx86_64\tUser\tupdates
+kernel-core\t7.1.12-200.fc44\tx86_64\tUser\tupdates
+kernel-core\t7.1.9-200.fc44\tx86_64\tUser\tupdates
+kernel-modules-core\t7.1.10-200.fc44\tx86_64\tUser\tupdates
+kernel-modules-core\t7.1.12-200.fc44\tx86_64\tUser\tupdates
+kernel-modules-core\t7.1.9-200.fc44\tx86_64\tUser\tupdates
+kernel-modules-extra\t7.1.10-200.fc44\tx86_64\tUser\tupdates
+kernel-modules-extra\t7.1.12-200.fc44\tx86_64\tUser\tupdates
+kernel-modules-extra\t7.1.9-200.fc44\tx86_64\tUser\tupdates
+kernel-modules\t7.1.10-200.fc44\tx86_64\tUser\tupdates
+kernel-modules\t7.1.12-200.fc44\tx86_64\tUser\tupdates
+kernel-modules\t7.1.9-200.fc44\tx86_64\tUser\tupdates
+kernel\t7.1.10-200.fc44\tx86_64\tUser\tupdates
+kernel\t7.1.12-200.fc44\tx86_64\tUser\tupdates
+kernel\t7.1.9-200.fc44\tx86_64\tUser\tupdates
+kexec-tools\t2.0.32-3.fc44\tx86_64\tGroup\t<unknown>
+kf6-baloo-file\t6.29.0-1.fc44\tx86_64\tGroup\tupdates
+kf6-kconfig-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-kconfigwidgets-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-kcoreaddons-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-kglobalaccel-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-kguiaddons-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-ki18n-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-kiconthemes-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-kio-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-kwidgetsaddons-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-kwindowsystem-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kf6-networkmanager-qt-devel\t6.29.0-1.fc44\tx86_64\tUser\tupdates
+kfind\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+khelpcenter\t1:26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kinfocenter\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+kio-admin\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kio-gdrive\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kitty\t0.47.1-1.fc44\tx86_64\tUser\tupdates
+kjournald\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kmahjongg\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kmenuedit\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+kmines\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kmouth\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kolourpaint\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kpat\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+krdc\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+krdp\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+krfb\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+krita\t6.0.2.1-1.fc44\tx86_64\tUser\tupdates
+kscreen\t1:6.7.4-1.fc44\tx86_64\tGroup\tupdates
+kscreenlocker\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+ksshaskpass\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+kunifiedpush\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kvantum\t1.1.6-1.fc44\tx86_64\tUser\t<unknown>
+kwalletmanager5\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+kwin\t6.7.4-2.fc44\tx86_64\tGroup\tupdates
+kwrite\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+lcms2-devel\t2.16-7.fc44\tx86_64\tUser\tfedora
+less\t704-4.fc44\tx86_64\tGroup\tupdates
+libGLEW\t2.2.0-12.fc44\tx86_64\tExternal User\t<unknown>
+libX11-devel\t1.8.13-1.fc44\ti686\tUser\tfedora
+libXcomposite-devel\t0.4.6-7.fc44\ti686\tUser\tfedora
+libXcursor-devel\t1.2.3-4.fc44\ti686\tUser\tfedora
+libXext-devel\t1.3.6-5.fc44\ti686\tUser\tfedora
+libXi-devel\t1.8.3-1.fc44\ti686\tUser\tupdates
+libXinerama-devel\t1.1.5-10.fc44\ti686\tUser\tfedora
+libXmu-devel\t1.2.1-5.fc44\ti686\tUser\tfedora
+libXmu-devel\t1.2.1-5.fc44\tx86_64\tUser\tfedora
+libXpm\t3.5.17-7.fc44\ti686\tExternal User\t<unknown>
+libXpresent-devel\t1.0.0-28.fc44\tx86_64\tUser\tfedora
+libXrandr-devel\t1.5.4-7.fc44\ti686\tUser\tfedora
+libXrender-devel\t0.9.12-4.fc44\ti686\tUser\tfedora
+libXv\t1.0.13-4.fc44\ti686\tExternal User\t<unknown>
+libXxf86dga-devel\t1.1.6-7.fc44\tx86_64\tUser\tfedora
+libXxf86vm-devel\t1.1.6-4.fc44\ti686\tUser\tfedora
+libXxf86vm-devel\t1.1.6-4.fc44\tx86_64\tUser\tfedora
+libappindicator-gtk3\t12.10.1-10.fc44\tx86_64\tGroup\t<unknown>
+libattr-devel\t2.6.0-1.fc44\tx86_64\tUser\tupdates
+libavcodec-freeworld\t8.1.2-3.fc44\tx86_64\tUser\trpmfusion-free-updates
+libavif\t1.3.0-4.fc44\ti686\tExternal User\t<unknown>
+libcava-devel\t0.10.7-2.fc44\tx86_64\tUser\tcopr:copr.fedorainfracloud.org:celestelove:libcava
+libcbor\t0.13.0-2.fc44\ti686\tExternal User\t<unknown>
+libdnf5-plugin-appstream\t5.4.3.0-2.fc44\tx86_64\tExternal User\tupdates
+libertas-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+libevdev-devel\t1.13.7-1.fc44\tx86_64\tUser\tupdates
+libexif\t0.6.26-1.fc44\ti686\tExternal User\t<unknown>
+libfido2\t1.16.0-5.fc44\ti686\tExternal User\t<unknown>
+libgcrypt-devel\t1.12.2-1.fc44\tx86_64\tUser\tupdates
+libglvnd-gles\t1:1.7.0-9.fc44\ti686\tGroup\tfedora
+libglvnd-gles\t1:1.7.0-9.fc44\tx86_64\tGroup\t<unknown>
+libgphoto2-devel\t2.5.33-2.fc44\tx86_64\tUser\tfedora
+libgphoto2\t2.5.33-2.fc44\ti686\tExternal User\t<unknown>
+libgudev\t238-9.fc44\ti686\tExternal User\t<unknown>
+libheif-freeworld\t1.21.2-3.fc44\tx86_64\tGroup\t<unknown>
+libibverbs\t61.0-2.fc44\ti686\tExternal User\t<unknown>
+libieee1284-devel\t0.2.11-48.fc44\tx86_64\tUser\tfedora
+libimagequant\t4.1.0-2.fc44\ti686\tExternal User\t<unknown>
+libjpeg-turbo-devel\t3.1.3-1.fc44\tx86_64\tUser\tfedora
+liblerc\t4.0.0-10.fc44\ti686\tExternal User\t<unknown>
+libnghttp3\t1.18.0-1.fc44\ti686\tExternal User\tupdates
+libnghttp3\t1.18.0-1.fc44\tx86_64\tExternal User\tupdates
+libnl3\t3.12.0-3.fc44\ti686\tExternal User\t<unknown>
+libnma-common\t1.10.6-11.fc44\tnoarch\tExternal User\t<unknown>
+libnsl\t2.43-8.fc44\tx86_64\tExternal User\tupdates
+libopenjph\t0.25.3-3.fc44\ti686\tExternal User\t<unknown>
+libpcap-devel\t14:1.10.6-2.fc44\tx86_64\tUser\tfedora
+libpcap\t14:1.10.6-2.fc44\ti686\tExternal User\t<unknown>
+libpng-static\t2:1.6.58-1.fc44\tx86_64\tUser\tupdates
+libqalculate-devel\t5.9.0-1.fc44\tx86_64\tUser\tfedora
+libreoffice-calc\t1:26.2.6.1-1.fc44\tx86_64\tGroup\tupdates
+libreoffice-draw\t1:26.2.6.1-1.fc44\tx86_64\tUser\tupdates
+libreoffice-emailmerge\t1:26.2.6.1-1.fc44\tx86_64\tGroup\tupdates
+libreoffice-graphicfilter\t1:26.2.6.1-1.fc44\tx86_64\tGroup\tupdates
+libreoffice-impress\t1:26.2.6.1-1.fc44\tx86_64\tGroup\tupdates
+libreoffice-math\t1:26.2.6.1-1.fc44\tx86_64\tUser\tupdates
+libreoffice-ure-common\t1:26.2.6.1-1.fc44\tnoarch\tExternal User\tupdates
+libreoffice-writer\t1:26.2.6.1-1.fc44\tx86_64\tGroup\tupdates
+librsvg2-devel\t2.62.3-1.fc44\tx86_64\tUser\tupdates
+librsvg2-tools\t2.62.3-1.fc44\tx86_64\tUser\tupdates
+libsigc++30\t3.8.1-1.fc44\tx86_64\tExternal User\tupdates
+libspng\t0.7.4-10.fc44\tx86_64\tExternal User\t<unknown>
+libtheora\t1:1.1.1-41.fc44\ti686\tExternal User\t<unknown>
+libtiff-devel\t4.7.2-1.fc44\tx86_64\tUser\tupdates
+libtiff\t4.7.2-1.fc44\ti686\tExternal User\tupdates
+libultrahdr\t1.4.0^20251202git8cbc983-1.fc44\tx86_64\tExternal User\t<unknown>
+libv4l-devel\t1.32.0-3.fc44\tx86_64\tUser\tfedora
+libv4l\t1.32.0-3.fc44\ti686\tExternal User\t<unknown>
+libva-devel\t2.23.0-3.fc44\tx86_64\tUser\tfedora
+libva-intel-media-driver\t26.2.4-1.fc44\tx86_64\tGroup\tupdates
+libva-utils\t2.23.0-2.fc44\tx86_64\tUser\tfedora
+libvisual\t1:0.4.2-4.fc44\ti686\tExternal User\t<unknown>
+libvkd3d-devel\t1.17-2.fc44\tx86_64\tUser\tfedora
+libxkbcommon-utils\t1.13.1-2.fc44\tx86_64\tUser\tfedora
+libxml2-devel\t2.12.10-6.fc44\ti686\tUser\tfedora
+libxslt-devel\t1.1.43-6.fc44\ti686\tUser\tfedora
+libxslt-devel\t1.1.43-6.fc44\tx86_64\tUser\tfedora
+libyuv\t0-0.61.20260213git6067afd.fc44\ti686\tExternal User\t<unknown>
+linkdupes\t0.7.3-2.fc44\tx86_64\tExternal User\t<unknown>
+liquidctl\t1.16.0-1.fc44\tnoarch\tUser\tfedora
+livesys-scripts\t0.9.6-1.fc44\tnoarch\tUser\t<unknown>
+lm_sensors-devel\t3.6.0-24.fc44\tx86_64\tUser\tfedora
+lockdev\t1.0.4-0.54.20111007git.fc44\ti686\tExternal User\t<unknown>
+logrotate\t3.22.0-5.fc44\tx86_64\tGroup\t<unknown>
+lrzsz\t0.12.20-76.fc44\tx86_64\tGroup\t<unknown>
+lshw\tB.02.20-11.fc44\tx86_64\tUser\tfedora
+lsof\t4.98.0-9.fc44\tx86_64\tGroup\t<unknown>
+lvm2\t2.03.38-2.fc44\tx86_64\tGroup\t<unknown>
+mactel-boot\t0.9-37.fc44\tx86_64\tGroup\t<unknown>
+mailcap\t2.1.54-10.fc44\tnoarch\tGroup\t<unknown>
+make\t1:4.4.1-12.fc44\tx86_64\tUser\t<unknown>
+man-db\t2.13.1-3.fc44\tx86_64\tGroup\t<unknown>
+man-pages\t6.13-3.fc44\tnoarch\tGroup\t<unknown>
+mangohud\t0.8.3~rc1-2.fc44\tx86_64\tUser\t<unknown>
+mcelog\t3:175-14.fc44\tx86_64\tGroup\t<unknown>
+md4c\t0.5.1-5.fc44\tx86_64\tExternal User\t<unknown>
+mdadm\t4.3-11.fc44\tx86_64\tGroup\t<unknown>
+mediawriter\t5.3.2-1.fc44\tx86_64\tUser\tupdates
+mesa-dri-drivers\t26.1.8-1.fc44\ti686\tGroup\tupdates
+mesa-dri-drivers\t26.1.8-1.fc44\tx86_64\tGroup\tupdates
+mesa-libEGL-devel\t26.1.8-1.fc44\tx86_64\tUser\tupdates
+mesa-libGL-devel\t26.1.8-1.fc44\ti686\tUser\tupdates
+mesa-libGLU-devel\t9.0.3-8.fc44\ti686\tUser\tfedora
+mesa-va-drivers-freeworld\t26.1.8-1.fc44\tx86_64\tUser\trpmfusion-free-updates
+mesa-vulkan-drivers\t26.1.8-1.fc44\ti686\tGroup\tupdates
+mesa-vulkan-drivers\t26.1.8-1.fc44\tx86_64\tGroup\tupdates
+meson\t1.11.2-1.fc44\tnoarch\tUser\tupdates
+microcode_ctl\t2:2.1-74.fc44\tx86_64\tGroup\t<unknown>
+mingw32-FAudio\t25.05-4.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-SDL3\t3.4.14-1.fc44\tnoarch\tExternal User\tupdates
+mingw32-crt\t13.0.0-3.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-filesystem\t152-1.fc44\tnoarch\tExternal User\tupdates
+mingw32-gcc-c++\t16.1.1-1.fc44\tx86_64\tUser\tupdates
+mingw32-gcc\t16.1.1-1.fc44\tx86_64\tUser\tupdates
+mingw32-lcms2\t2.14-9.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-libgcc\t16.1.1-1.fc44\tx86_64\tExternal User\tupdates
+mingw32-libjpeg-turbo\t3.1.2-2.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-libpng\t1.6.58-1.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-libstdc++\t16.1.1-1.fc44\tx86_64\tExternal User\tupdates
+mingw32-libtiff\t4.7.2-1.fc44\tnoarch\tExternal User\tupdates
+mingw32-libxml2\t2.12.10-3.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-libxslt\t1.1.43-5.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-vkd3d\t1.17-2.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-win-iconv\t0.0.10-4.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-winpthreads\t13.0.0-3.fc44\tnoarch\tExternal User\t<unknown>
+mingw32-zlib\t1.3.2-1.fc44\tnoarch\tExternal User\t<unknown>
+mingw64-gcc-c++\t16.1.1-1.fc44\tx86_64\tUser\tupdates
+mingw64-gcc\t16.1.1-1.fc44\tx86_64\tUser\tupdates
+minicom\t2.11.1-1.fc44\tx86_64\tGroup\t<unknown>
+miniupnpc\t2.3.3-4.fc44\tx86_64\tExternal User\t<unknown>
+mpage\t2.5.7-24.fc44\tx86_64\tGroup\t<unknown>
+mpg123-devel\t1.32.10-3.fc44\tx86_64\tUser\tfedora
+mpv\t0.41.0-5.fc44\tx86_64\tUser\tfedora
+mpvpaper\t1.9-1.fc44\tx86_64\tUser\tterra
+mt7xxx-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+mtr\t2:0.96-1.fc44\tx86_64\tGroup\tupdates
+ncurses-devel\t6.6-1.fc44\ti686\tUser\tfedora
+ncurses-devel\t6.6-1.fc44\tx86_64\tUser\tfedora
+ncurses\t6.6-1.fc44\tx86_64\tGroup\t<unknown>
+net-tools\t2.0-0.77.20160912git.fc44\tx86_64\tGroup\t<unknown>
+nfs-client-utils\t1:2.8.7-7.fc44\tx86_64\tExternal User\tupdates
+nfs-common-utils\t1:2.8.7-7.fc44\tx86_64\tExternal User\tupdates
+nfs-utils\t1:2.8.7-7.fc44\tx86_64\tGroup\tupdates
+nfsv3-client-utils\t1:2.8.7-7.fc44\tx86_64\tExternal User\tupdates
+nfsv4-client-utils\t1:2.8.7-7.fc44\tx86_64\tExternal User\tupdates
+ngtcp2-crypto-ossl\t1.22.1-1.fc44\ti686\tExternal User\t<unknown>
+ngtcp2\t1.22.1-1.fc44\ti686\tExternal User\t<unknown>
+ninja-build\t1.13.2-2.fc44\tx86_64\tExternal User\t<unknown>
+niri\t26.04-1.fc44\tx86_64\tUser\tupdates
+nmap-ncat\t4:7.92-11.fc44\tx86_64\tGroup\tupdates
+noctalia\t5.0.0~beta.10-1.fc44\tx86_64\tUser\tupdates
+nodejs22-bin\t1:22.23.1-2.fc44\tnoarch\tExternal User\tupdates
+nodejs22-docs\t1:22.23.1-2.fc44\tnoarch\tExternal User\tupdates
+nodejs22-full-i18n\t1:22.23.1-2.fc44\tx86_64\tExternal User\tupdates
+nodejs22-libs\t1:22.23.1-2.fc44\tx86_64\tExternal User\tupdates
+nodejs22-npm-bin\t1:22.23.1-2.fc44\tnoarch\tExternal User\tupdates
+nodejs22-npm\t1:10.9.8-1.22.23.1.2.fc44\tnoarch\tExternal User\tupdates
+nodejs22\t1:22.23.1-2.fc44\tx86_64\tExternal User\tupdates
+nss-mdns\t0.15.1-28.fc44\ti686\tGroup\t<unknown>
+nss-mdns\t0.15.1-28.fc44\tx86_64\tGroup\t<unknown>
+ntfs-3g\t2:2026.2.25-1.fc44\tx86_64\tGroup\tupdates
+ntfsprogs\t2:2026.2.25-1.fc44\tx86_64\tGroup\tupdates
+nvidia-gpu-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+nvme-cli\t2.16-3.fc44\tx86_64\tGroup\tupdates
+nvtop\t3.3.2-1.fc44\tx86_64\tUser\t<unknown>
+nxpwireless-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+obs-studio\t32.1.1-3.fc44\tx86_64\tUser\tupdates
+okular\t26.08.0-2.fc44\tx86_64\tGroup\tupdates
+open-vm-tools-desktop\t13.1.0-2.fc44\tx86_64\tGroup\tupdates
+openal-soft-devel\t1.24.2-6.fc44\tx86_64\tUser\tfedora
+openapv-libs\t0.2.1.2-1.fc44\tx86_64\tExternal User\t<unknown>
+opencl-headers\t3.0-35.20250708git8a97ebc.fc44\tnoarch\tUser\tfedora
+openldap-devel\t2.6.13-1.fc44\ti686\tUser\tfedora
+openldap-devel\t2.6.13-1.fc44\tx86_64\tUser\tfedora
+opensc\t0.27.1-2.fc44\tx86_64\tGroup\t<unknown>
+openssh-clients\t10.2p1-14.fc44\tx86_64\tGroup\tupdates
+openssh-server\t10.2p1-14.fc44\tx86_64\tGroup\tupdates
+orc\t0.4.41-3.fc44\ti686\tExternal User\t<unknown>
+orca\t50.2-1.fc44\tnoarch\tGroup\tupdates
+pam-kwallet\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+pangomm2.48\t2.56.2-1.fc44\tx86_64\tExternal User\tupdates
+papirus-icon-theme\t20250501-2.fc44\tnoarch\tUser\t<unknown>
+paps\t0.8.0-15.fc44\tx86_64\tGroup\t<unknown>
+parted\t3.6-14.fc44\tx86_64\tGroup\t<unknown>
+passwdqc\t2.0.3-9.fc44\tx86_64\tGroup\t<unknown>
+patch\t2.8-4.fc44\tx86_64\tUser\tfedora
+pavucontrol\t6.2-1.fc44\tx86_64\tExternal User\tupdates
+pciutils\t3.15.0-1.fc44\tx86_64\tGroup\tupdates
+perl\t4:5.42.3-525.fc44\tx86_64\tUser\tupdates
+phonon-qt6-backend-vlc\t0.12.0-8.fc44\tx86_64\tGroup\t<unknown>
+pinentry-qt\t1.3.2-3.fc44\tx86_64\tGroup\t<unknown>
+pinfo\t0.6.13-10.fc44\tx86_64\tGroup\t<unknown>
+pipewire-alsa\t1.6.8-1.fc44\ti686\tGroup\tupdates
+pipewire-alsa\t1.6.8-1.fc44\tx86_64\tGroup\tupdates
+pipewire-config-raop\t1.6.8-1.fc44\tx86_64\tGroup\tupdates
+pipewire-devel\t1.6.8-1.fc44\tx86_64\tUser\tupdates
+pipewire-gstreamer\t1.6.8-1.fc44\tx86_64\tGroup\tupdates
+pipewire-pulseaudio\t1.6.8-1.fc44\tx86_64\tGroup\tupdates
+pipewire-utils\t1.6.8-1.fc44\tx86_64\tGroup\tupdates
+pkgconf\t2.5.1-1.fc44\ti686\tUser\tfedora
+plasma-breeze\t6.7.4-2.fc44\tx86_64\tGroup\tupdates
+plasma-desktop-doc\t6.7.4-1.fc44\tnoarch\tGroup\tupdates
+plasma-desktop\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-discover-notifier\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-discover\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-disks\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-nm-l2tp\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-nm-openconnect\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-nm-openswan\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-nm-openvpn\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-nm-pptp\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-nm-vpnc\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-nm\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-pa\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-print-manager\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-smart-video-wallpaper-reborn\t2.9.0-1.fc44\tnoarch\tUser\tfedora
+plasma-systemmonitor\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-thunderbolt\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-vault\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-welcome-fedora\t6.3.4-3.fc44\tnoarch\tUser\t<unknown>
+plasma-welcome\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plasma-workspace-wallpapers\t6.7.4-1.fc44\tnoarch\tGroup\tupdates
+plasma-workspace\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+plocate\t1.1.24-1.fc44\tx86_64\tGroup\t<unknown>
+plymouth-plugin-script\t24.004.60-24.fc44\tx86_64\tUser\t<unknown>
+plymouth-system-theme\t24.004.60-24.fc44\tx86_64\tGroup\t<unknown>
+plymouth\t24.004.60-24.fc44\tx86_64\tGroup\t<unknown>
+policycoreutils\t3.11-2.fc44\tx86_64\tGroup\tupdates
+polkit-kde\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+power-profiles-daemon\t0.30-3.fc44\tx86_64\tUser\t<unknown>
+ppp\t2.5.1-7.fc44\tx86_64\tGroup\t<unknown>
+prefixdevname\t0.2.0-8.fc44\tx86_64\tGroup\t<unknown>
+prismlauncher\t11.0.3-1.fc44\tx86_64\tUser\tterra
+procps-ng\t4.0.6-1.fc44\tx86_64\tGroup\t<unknown>
+psacct\t6.6.4-26.fc44\tx86_64\tGroup\t<unknown>
+pulseaudio-libs-devel\t17.0-9.fc44\tx86_64\tUser\tfedora
+python-pyqt6-rpm-macros\t6.11.0-4.fc44\tnoarch\tExternal User\tupdates
+python3-bugzilla\t3.3.0-7.fc44\tnoarch\tExternal User\t<unknown>
+python3-build\t1.4.0-2.fc44\tnoarch\tUser\tfedora
+python3-devel\t3.14.7-1.fc44\tx86_64\tUser\tupdates
+python3-hatch-vcs\t0.5.0-6.fc44\tnoarch\tUser\tfedora
+python3-hatchling\t1.31.0-1.fc44\tnoarch\tUser\tupdates
+python3-ibus\t1.5.34-4.fc44\tx86_64\tExternal User\tupdates
+python3-installer\t0.7.0-14.fc44\tnoarch\tUser\tfedora
+python3-jupyter-core\t5.9.0-2.fc44\tnoarch\tUser\tfedora
+python3-nbconvert\t7.16.4-13.fc44\tnoarch\tUser\tfedora
+python3-pefile\t2024.8.26-7.fc44\tnoarch\tUser\tfedora
+python3-pip\t26.0.1-3.fc44\tnoarch\tUser\tupdates
+python3-pyqt6-base\t6.11.0-4.fc44\tx86_64\tExternal User\tupdates
+python3-pyqt6-sip\t13.11.1-1.fc44\tx86_64\tExternal User\tupdates
+python3-pytest\t8.4.2-2.fc44\tnoarch\tUser\tfedora
+qcom-wwan-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+qemu-guest-agent\t2:10.2.2-1.fc44\tx86_64\tGroup\t<unknown>
+qt6-qtbase-private-devel\t6.11.1-1.fc44\tx86_64\tUser\tupdates
+qt6-qtdeclarative-devel\t6.11.1-3.fc44\tx86_64\tUser\tupdates
+qt6-qtshadertools-devel\t6.11.1-1.fc44\tx86_64\tUser\tupdates
+qt6-qtsvg-devel\t6.11.1-1.fc44\tx86_64\tUser\tupdates
+qt6-qtwayland-devel\t6.11.1-1.fc44\tx86_64\tUser\tupdates
+qt6ct\t0.11-15.20250907git23a985f.fc44\tx86_64\tUser\tupdates
+quickshell-git\t0.3.1^856.git2d3b3e9-1.fc44\tx86_64\tUser\tcopr:copr.fedorainfracloud.org:errornointernet:quickshell
+quota\t1:4.11-2.fc44\tx86_64\tGroup\t<unknown>
+rdma-core-common\t61.0-2.fc44\tnoarch\tExternal User\t<unknown>
+readline\t8.3-4.fc44\ti686\tExternal User\t<unknown>
+realmd\t0.17.1-19.fc44\tx86_64\tGroup\t<unknown>
+realtek-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+rootfiles\t9.0-6.fc44\tnoarch\tGroup\t<unknown>
+rpm\t6.0.2-1.fc44\tx86_64\tGroup\tupdates
+rpmfusion-free-release\t44-3\tnoarch\tUser\t<unknown>
+rpmfusion-nonfree-release\t44-3\tnoarch\tUser\t<unknown>
+rsync\t3.5.0-1.fc44\tx86_64\tGroup\tupdates
+rsyslog\t8.2604.0-1.fc44\tx86_64\tGroup\t<unknown>
+rust\t1.98.0-1.fc44\tx86_64\tUser\tupdates
+samba-client\t2:4.24.6-1.fc44\tx86_64\tGroup\tupdates
+samba-core-libs\t2:4.24.6-1.fc44\tx86_64\tExternal User\tupdates
+samba-ndr-libs\t2:4.24.6-1.fc44\tx86_64\tExternal User\tupdates
+samba-usershares\t2:4.24.6-1.fc44\tnoarch\tGroup\tupdates
+sane-backends-devel\t1.4.0-6.fc44\tx86_64\tUser\tfedora
+sassc\t3.6.2-13.fc44\tx86_64\tUser\tfedora
+screenfetch\t3.9.1-15.fc44\tnoarch\tUser\t<unknown>
+sddm-breeze\t6.7.4-1.fc44\tnoarch\tGroup\tupdates
+sddm-kcm\t6.7.4-1.fc44\tx86_64\tGroup\tupdates
+sddm-wayland-plasma\t6.7.4-1.fc44\tnoarch\tGroup\tupdates
+sddm\t0.21.0-13.fc44\tx86_64\tGroup\t<unknown>
+sdl2-compat-devel\t2.32.70-1.fc44\tx86_64\tUser\tupdates
+selinux-policy-targeted\t44.8-1.fc44\tnoarch\tGroup\tupdates
+setroubleshoot\t3.3.36-3.fc44\tx86_64\tGroup\t<unknown>
+setup\t2.15.0-28.fc44\tnoarch\tGroup\t<unknown>
+shadow-utils\t2:4.19.0-7.fc44\tx86_64\tGroup\t<unknown>
+shim-ia32\t16.1-5\tx86_64\tGroup\t<unknown>
+shim-x64\t16.1-5\tx86_64\tGroup\t<unknown>
+signon-kwallet-extension\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+skanpage\t26.08.0-1.fc44\tx86_64\tGroup\tupdates
+slurp\t1.5.0-6.fc44\tx86_64\tUser\tfedora
+smartmontools\t1:7.5-9.fc44\tx86_64\tGroup\tupdates
+snapd\t2.76-0.fc44\tx86_64\tUser\tupdates
+snapper\t0.13.0-3.fc44\tx86_64\tUser\t<unknown>
+sos\t4.12.0-1.fc44\tnoarch\tGroup\tupdates
+sourcegit\t2026.19-1\tx86_64\tUser\t@commandline
+spandsp\t0.0.6-22.fc44\ti686\tExternal User\t<unknown>
+spandsp\t0.0.6-22.fc44\tx86_64\tExternal User\t<unknown>
+spectacle\t1:6.7.4-1.fc44\tx86_64\tGroup\tupdates
+speech-dispatcher\t0.12.1-6.fc44\tx86_64\tGroup\t<unknown>
+spice-vdagent\t0.23.0-2.fc44\tx86_64\tGroup\t<unknown>
+spice-webdavd\t3.0-13.fc44\tx86_64\tGroup\t<unknown>
+sssd-common\t2.13.1-2.fc44\tx86_64\tGroup\tupdates
+sssd-kcm\t2.13.1-2.fc44\tx86_64\tGroup\tupdates
+sssd-proxy\t2.13.1-2.fc44\tx86_64\tGroup\tupdates
+starship\t1.26.0-1.fc44\tx86_64\tUser\tterra
+stb_image_resize2-devel\t2.18^20260313git904aa67-2.fc44\tx86_64\tUser\tupdates
+steam-arch-transition\t1.0.0.87-1.fc44\tnoarch\tUser\tterra
+stressapptest\t1.0.9-10.20220222git6714c57.fc44\tx86_64\tUser\tfedora
+sudo\t1.9.17-8.p2.fc44\tx86_64\tGroup\t<unknown>
+swappy\t1.5.1-8.fc44\tx86_64\tUser\tfedora
+symlinks\t1.7-14.fc44\tx86_64\tGroup\t<unknown>
+system-config-printer-udev\t1.5.18-20.fc44\tx86_64\tGroup\tupdates
+systemd-devel\t259.8-1.fc44\tx86_64\tUser\tupdates
+systemd-oomd-defaults\t259.8-1.fc44\tnoarch\tUser\tupdates
+systemd-resolved\t259.8-1.fc44\tx86_64\tGroup\tupdates
+systemd-udev\t259.8-1.fc44\tx86_64\tGroup\tupdates
+systemd\t259.8-1.fc44\tx86_64\tGroup\tupdates
+tailscale\t1.102.3-1\tx86_64\tUser\ttailscale-stable
+tar\t2:1.35-8.fc44\tx86_64\tGroup\t<unknown>
+tcpdump\t14:4.99.6-3.fc44\tx86_64\tGroup\t<unknown>
+teamd\t1.32-13.fc44\tx86_64\tGroup\t<unknown>
+terra-release\t44-9\tnoarch\tUser\tterra
+tesseract\t5.5.3-1.fc44\tx86_64\tUser\tupdates
+texlive-xetex\t12:svn77830-111.fc44\tx86_64\tUser\tupdates
+texlive\t12:2025-1.fc44\tnoarch\tUser\tfedora
+thermald\t2.5.12-3.fc44\tx86_64\tGroup\tupdates
+time\t1.9-28.fc44\tx86_64\tGroup\t<unknown>
+tiwilink-firmware\t20260810-1.fc44\tnoarch\tGroup\tupdates
+tomlplusplus-devel\t3.4.0-7.fc44\tx86_64\tUser\tfedora
+toolbox\t0.3-4.fc44\tx86_64\tGroup\t<unknown>
+traceroute\t3:2.1.6-4.fc44\tx86_64\tGroup\t<unknown>
+trash-cli\t0.24.5.26-18.fc44\tnoarch\tUser\tfedora
+tree\t2.2.1-4.fc44\tx86_64\tGroup\t<unknown>
+udisks2-btrfs\t2.11.2-1.fc44\tx86_64\tUser\tupdates
+udisks2\t2.11.2-1.fc44\tx86_64\tGroup\tupdates
+unityhub\t3.16.4-1\tx86_64\tUser\t@commandline
+unixODBC-devel\t2.3.14-3.fc44\tx86_64\tUser\tfedora
+unixODBC\t2.3.14-3.fc44\ti686\tExternal User\t<unknown>
+unzip\t6.0-69.fc44\tx86_64\tGroup\t<unknown>
+usb_modeswitch\t2.6.2-5.fc44\tx86_64\tGroup\t<unknown>
+usbutils\t019-2.fc44\tx86_64\tGroup\t<unknown>
+util-linux\t2.41.5-1.fc44\tx86_64\tGroup\tupdates
+uv\t0.12.3-1.fc44\tx86_64\tUser\tupdates
+vesktop\t1.6.7-2.fc44\tx86_64\tUser\tterra
+vim-minimal\t2:9.2.967-1.fc44\tx86_64\tGroup\tupdates
+virtualbox-guest-additions\t7.2.14-1.fc44\tx86_64\tGroup\tupdates
+vlc-plugin-gstreamer\t1:3.0.23-10.fc44\tx86_64\tGroup\t<unknown>
+vulkan-loader-devel\t1.4.341.0-1.fc44\tx86_64\tUser\tfedora
+wayland-devel\t1.25.0-1.fc44\ti686\tUser\tupdates
+wayland-devel\t1.25.0-1.fc44\tx86_64\tUser\tupdates
+wayland-protocols-devel\t1.49-1.fc44\tnoarch\tUser\tupdates
+wget2-wget\t2.2.1-2.fc44\tx86_64\tGroup\t<unknown>
+which\t2.25-1.fc44\tx86_64\tGroup\tupdates
+whois\t5.6.6-1.fc44\tx86_64\tGroup\t<unknown>
+wine-alsa\t11.0-3.fc44\tx86_64\tExternal User\t<unknown>
+wine-core\t11.0-3.fc44\ti686\tExternal User\t<unknown>
+wine-devel\t11.0-3.fc44\tx86_64\tUser\tfedora
+wine-pulseaudio\t11.0-3.fc44\tx86_64\tExternal User\t<unknown>
+wine\t11.0-3.fc44\tx86_64\tUser\tfedora
+winetricks\t20260125-1.fc44\tnoarch\tUser\t<unknown>
+wireplumber\t0.5.14-1.fc44\tx86_64\tGroup\t<unknown>
+wl-clip-persist\t0.4.1-1.20240502gitv0.4.1.fc43\tx86_64\tUser\tcopr:copr.fedorainfracloud.org:leloubil:wl-clip-persist
+wlroots-devel\t0.20.2-1.fc44\tx86_64\tUser\tupdates
+words\t3.0-63.fc44\tnoarch\tGroup\t<unknown>
+wpa_supplicant\t1:2.11-9.fc44\tx86_64\tGroup\t<unknown>
+xdg-desktop-portal-gnome\t50.0-1.fc44\tx86_64\tUser\tfedora
+xfsprogs\t7.1.1-1.fc44\tx86_64\tGroup\tupdates
+xz-lzma-compat\t1:5.8.2-2.fc44\tx86_64\tUser\tfedora
+yasm\t1.3.0^20250625git121ab15-3.fc44\tx86_64\tUser\tfedora
+yazi\t26.9.1-1.fc44\tx86_64\tUser\tterra
+yq\t4.53.3-1.fc44\tx86_64\tUser\tupdates
+zip\t3.0-45.fc44\tx86_64\tGroup\t<unknown>
+zram-generator-defaults\t1.2.1-5.fc44\tnoarch\tGroup\t<unknown>
+zsh-autosuggestions\t0.7.1-4.fc44\tnoarch\tUser\t<unknown>
+zsh-syntax-highlighting\t0.8.0-7.fc44\tnoarch\tUser\t<unknown>
+zsh\t5.9-21.fc44\tx86_64\tUser\tupdates

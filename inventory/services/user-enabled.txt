@@ -1,0 +1,12 @@
+dbus-broker.service
+dbus.socket
+grub-boot-success.timer
+noctalia-lyrics.service
+obex.service
+pipewire-pulse.socket
+pipewire.socket
+snapd.session-agent.socket
+systemd-tmpfiles-clean.timer
+systemd-tmpfiles-setup.service
+wireplumber.service
+xdg-user-dirs.service

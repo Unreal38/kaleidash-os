@@ -1,0 +1,16 @@
+copr:copr.fedorainfracloud.org:atim:starship	Copr repo for starship owned by atim
+copr:copr.fedorainfracloud.org:celestelove:app2unit	Copr repo for app2unit owned by celestelove
+copr:copr.fedorainfracloud.org:celestelove:libcava	Copr repo for libcava owned by celestelove
+copr:copr.fedorainfracloud.org:codifryed:CoolerControl	Copr repo for CoolerControl owned by codifryed
+copr:copr.fedorainfracloud.org:errornointernet:quickshell	Copr repo for quickshell owned by errornointernet
+copr:copr.fedorainfracloud.org:g3tchoo:prismlauncher	Copr repo for prismlauncher owned by g3tchoo
+copr:copr.fedorainfracloud.org:leloubil:wl-clip-persist	Copr repo for wl-clip-persist owned by leloubil
+fedora	Fedora 44 - x86_64
+fedora-cisco-openh264	Fedora 44 openh264 (From Cisco) - x86_64
+rpmfusion-free	RPM Fusion for Fedora 44 - Free
+rpmfusion-free-updates	RPM Fusion for Fedora 44 - Free - Updates
+rpmfusion-nonfree	RPM Fusion for Fedora 44 - Nonfree
+rpmfusion-nonfree-updates	RPM Fusion for Fedora 44 - Nonfree - Updates
+tailscale-stable	Tailscale stable
+terra	Terra 44
+updates	Fedora 44 - x86_64 - Updates
