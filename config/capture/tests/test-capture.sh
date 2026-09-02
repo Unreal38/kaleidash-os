@@ -73,10 +73,19 @@ assert_not_contains "$greeter_config" '[user]'
 assert_not_contains "$greeter_config" 'testuser'
 assert_contains "$greeter_config" '[session]'
 
+cp -- "$FIXTURES/secret.toml" "$fixture_home/.local/state/noctalia/settings.toml"
+run_capture >/dev/null
+assert_contains "$snapshot/home/.local/state/noctalia/settings.toml" \
+  'api_key = "@SECRET_NOCTALIA_WALLHAVEN_API_KEY@"'
+assert_not_contains "$snapshot/home/.local/state/noctalia/settings.toml" 'fixture-secret'
+assert_contains "$fixture_home/.local/state/noctalia/settings.toml" 'fixture-secret'
+assert_contains "$snapshot/secrets.required" 'SECRET_NOCTALIA_WALLHAVEN_API_KEY'
+"$CAPTURE_DIR/validate-snapshot" "$snapshot" >/dev/null
+
 before="$(sha256sum "$snapshot/manifest.tsv")"
-cp -- "$FIXTURES/secret.toml" "$fixture_home/.config/starship.toml"
+cp -- "$FIXTURES/unsafe-email.toml" "$fixture_home/.config/starship.toml"
 if run_capture >/dev/null 2>&1; then
-  die "capture unexpectedly accepted a credential-like assignment"
+  die "capture unexpectedly accepted an email address"
 fi
 after="$(sha256sum "$snapshot/manifest.tsv")"
 [[ "$before" == "$after" ]] || die "failed capture replaced the previous safe snapshot"

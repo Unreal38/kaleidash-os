@@ -45,6 +45,14 @@ SAFE_CREDENTIAL_VALUES = {
 }
 
 
+def safe_credential_value(value: str) -> bool:
+    compact = value.strip().removesuffix(",").strip()
+    if compact in SAFE_CREDENTIAL_VALUES:
+        return True
+    unquoted = compact.strip("\"'")
+    return re.fullmatch(r"@SECRET_[A-Z0-9_]+@", unquoted) is not None
+
+
 def fail(messages: list[str]) -> None:
     for message in messages:
         print(f"KaleidashOS config validation error: {message}", file=sys.stderr)
@@ -103,7 +111,7 @@ def main() -> None:
                 line = content.count("\n", 0, match.start()) + 1
                 errors.append(f"{label} in {relative}:{line}")
         for match in CREDENTIAL_ASSIGNMENT.finditer(content):
-            if match.group(1).strip() not in SAFE_CREDENTIAL_VALUES:
+            if not safe_credential_value(match.group(1)):
                 line = content.count("\n", 0, match.start()) + 1
                 errors.append(f"credential-like assignment in {relative}:{line}")
 

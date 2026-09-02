@@ -187,6 +187,13 @@ literal_replacements = sorted(
     key=lambda pair: len(pair[0]),
     reverse=True,
 )
+credential_key = re.compile(
+    r"^(?P<prefix>\s*[\"']?(?P<key>password|passwd|token|secret|api[-_]?key|client[-_]?secret|"
+    r"refresh[-_]?token|authorization|cookie|username)[\"']?\s*[:=]\s*)(?P<value>.*?)(?P<newline>\r?\n?)$",
+    re.I,
+)
+table_header = re.compile(r"^\s*\[\[?\s*(.+?)\s*\]\]?\s*(?:#.*)?$")
+required_secrets: set[str] = set()
 
 def strip_tables(text: str, roots: set[str]) -> str:
     result = []
@@ -198,6 +205,40 @@ def strip_tables(text: str, roots: set[str]) -> str:
             skipping = table_root in roots
         if not skipping:
             result.append(line)
+    return "".join(result)
+
+def secret_token(table: str, key: str, relative: str) -> str:
+    context = re.sub(r"^plugin_settings[.]+", "", table, flags=re.I)
+    if not context:
+        context = Path(relative).stem
+    identifier = re.sub(r"[^A-Z0-9]+", "_", f"{context}_{key}".upper()).strip("_")
+    return f"SECRET_{identifier}"
+
+def redact_credentials(text: str, relative: str) -> str:
+    current_table = ""
+    result = []
+    for line in text.splitlines(keepends=True):
+        header = table_header.match(line)
+        if header:
+            current_table = header.group(1).replace('"', "").replace("'", "")
+            result.append(line)
+            continue
+        match = credential_key.match(line)
+        if not match:
+            result.append(line)
+            continue
+
+        raw_value = match.group("value")
+        compact = raw_value.strip().removesuffix(",").strip()
+        unquoted = compact.strip("\"'")
+        if not unquoted or re.fullmatch(r"@(?:USER|REDACTED|SECRET_[A-Z0-9_]+)@", unquoted):
+            result.append(line)
+            continue
+
+        token = secret_token(current_table, match.group("key"), relative)
+        required_secrets.add(token)
+        comma = "," if raw_value.rstrip().endswith(",") else ""
+        result.append(f'{match.group("prefix")}"@{token}@"{comma}{match.group("newline")}')
     return "".join(result)
 
 for path in sorted(root.rglob("*")):
@@ -215,7 +256,12 @@ for path in sorted(root.rglob("*")):
     for source, target in ((username, "@USER@"), (hostname, "@HOSTNAME@")):
         if source and len(source) >= 3:
             text = re.sub(rf"(?<![\w-]){re.escape(source)}(?![\w-])", target, text)
+    text = redact_credentials(text, relative)
     path.write_text(text, encoding="utf-8")
+
+if required_secrets:
+    content = "# Required local secrets - never add values to this file.\n" + "\n".join(sorted(required_secrets)) + "\n"
+    (root / "secrets.required").write_text(content, encoding="utf-8")
 PY
 
 install -m 0644 -- "$SCRIPT_DIR/CAPTURED.template.md" "$SNAPSHOT/CAPTURED.md"
